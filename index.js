@@ -2,7 +2,6 @@ const mysql = require("mysql");
 const util = require("util");
 const express = require("express");
 const bodyParser = require("body-parser");
-const { nanoid } = require("nanoid");
 var app = express();
 
 app.use(bodyParser.json());
@@ -47,36 +46,41 @@ app.listen(3000, () => {
 /* 
 
 CREATE TABLE affiliate (
-    id int NOT NULL AUTO_INCREMENT,
     address varchar(255) NOT NULL ,
-    code varchar(255) NOT NULL ,
-    nft_minted int,
-    PRIMARY KEY (id),
-    UNIQUE(address),
-    UNIQUE(code)
+    nft_minted int default 0,
+    UNIQUE(address)
 );
+
+
+ALTER TABLE affiliate ADD COLUMN id INT AUTO_INCREMENT PRIMARY KEY,
+    AUTO_INCREMENT=100000;
 */
 
 app.post("/generate", async (req, res) => {
   try {
     const code = await query(
-      `select code from affiliate where address = '${req.body.address}';`
+      `select id from affiliate where address = '${req.body.address}';`
     );
     var data = JSON.stringify(code);
     var data1 = JSON.parse(data);
     if (code.length == 0) {
-      var gen = nanoid(7);
       const insert = await query(
-        `insert into affiliate (code,address) values('${gen}','${req.body.address}');`
+        `insert into affiliate (address) values('${req.body.address}');`
       );
+      const getId = await query(
+        `select id from affiliate where address = '${req.body.address}';`
+      );
+      var data2 = JSON.stringify(getId);
+      var data3 = JSON.parse(data2);
+      console.log("code :: ",data3);
       res.status(200).json({
         message: "Code generated",
-        code: gen,
+        code: `${data3[0].id}ZCODE`,
       });
     } else {
       res.status(200).json({
         message: "code found",
-        code: data1[0].code,
+        code: `${data1[0].id}ZCODE`,
       });
     }
   } catch (error) {
