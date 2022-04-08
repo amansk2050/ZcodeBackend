@@ -3,7 +3,8 @@ const util = require("util");
 const express = require("express");
 const bodyParser = require("body-parser");
 var app = express();
-
+var cors = require('cors');
+app.use(cors());
 app.use(bodyParser.json());
 
 // MYSQL details
@@ -20,18 +21,19 @@ const query = util.promisify(connection.query).bind(connection);
 // request url - http://localhost:3000/getdata
 app.get("/getdata", async (req, res) => {
   try {
-    console.log("hello");
+    console.log("hello :: ",req.query.code);
     const code = await query(
-      `select address from affiliate where code = '${req.query.code}';`
+      `select address from affiliate where id = '${req.query.code}';`
     );
     var data = JSON.stringify(code);
     var data1 = JSON.parse(data);
+    console.log("data ! ",data1)
     res.status(200).json({
       message: "Address found",
-      code: data1[0].address,
+      address: data1[0].address,
     });
   } catch (error) {
-    console.log("error :: ", err);
+    console.log("error :: ", error);
     res.status(400).json({
       message: "error",
       code: error,
@@ -57,6 +59,7 @@ ALTER TABLE affiliate ADD COLUMN id INT AUTO_INCREMENT PRIMARY KEY,
 */
 
 app.post("/generate", async (req, res) => {
+  console.log("inside generate ");
   try {
     const code = await query(
       `select id from affiliate where address = '${req.body.address}';`
