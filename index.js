@@ -9,11 +9,19 @@ app.use(bodyParser.json());
 
 // MYSQL details
 
+// var connection = mysql.createConnection({
+//   host: "localhost",
+//   user: "root",
+//   password: "Final@2050",
+//   database: "affilicate_code",
+// });
+
+//-- for production --
 var connection = mysql.createConnection({
-  host: "localhost",
-  user: "root",
-  password: "Final@2050",
-  database: "affilicate_code",
+  host: "zcode.dog",
+  user: "zcodedog_db_user",
+  password: "%XjCy]SZCzLQ",
+  database: "zcodedog_data",
 });
 const query = util.promisify(connection.query).bind(connection);
 
@@ -41,9 +49,9 @@ app.get("/getdata", async (req, res) => {
   }
 });
 
-app.listen(3000, () => {
-  console.log("Server is running at port 3000");
-});
+// app.listen(3000, () => {
+//   console.log("Server is running at port 3000");
+// });
 
 /* 
 
