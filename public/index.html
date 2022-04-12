@@ -1,0 +1,1461 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!--=============== FAVICON ===============-->
+        <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon">
+
+        <!--=============== REMIX ICONS ===============-->
+        <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+
+
+
+        <!--=============== CSS ===============-->
+        <link rel='stylesheet' href='https://unpkg.com/@glidejs/glide@3.4.0/dist/css/glide.core.min.css'>
+        <link rel='stylesheet' href='https://unpkg.com/@glidejs/glide@3.4.0/dist/css/glide.theme.min.css'>
+        <link rel='stylesheet' href='https://unpkg.com/swiper/swiper-bundle.min.css'>
+        <link rel="stylesheet" href="assets/css/styles.css">
+        <link rel="stylesheet" href="metamask.css">
+
+
+        <title>Zcode Doge NFT</title>
+    </head>
+    <body>
+        <!--==================== PRE LOADER ====================-->
+        <div class="loader-wrapper">
+            <div class="loader"></div>
+            <div class="loader-section section-left"></div>
+            <div class="loader-section section-right"></div>
+          </div>
+          <script>
+                /*=============== PRE LOADER ANIMATION ===============*/
+                window.addEventListener("load", function () {
+                document.querySelector("body").classList.add("loaded");
+                });
+          </script>
+        <!--==================== HEADER ====================-->
+        <header class="header" id="header">
+            <nav class="nav nav__header">
+                <a href="index.html" class="nav__logo">
+                    <svg class="nav__logo-icon" viewBox="0 0 60 77.14"><defs><style>.cls-1{fill-rule:evenodd;fill:url(#linear-gradient);}</style><linearGradient id="linear-gradient" x1="-7.31" y1="12.25" x2="67.46" y2="70.41" gradientTransform="matrix(1, 0, 0, -1, 0, 80)" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#3c3bf0"/><stop offset="1" stop-color="#dc7abf"/></linearGradient></defs><path class="cls-1" d="M39.7,6a2.5,2.5,0,0,0-1.33.1,2.43,2.43,0,0,0-1.08.79,2,2,0,0,0,.84.66,1.83,1.83,0,0,0,1.06.11c-3.62,3.19-7.37-.11-7.37-.11a4.79,4.79,0,0,0,2,0,4.7,4.7,0,0,0,1.86-.81c-1.51-2.3-4.29-1.36-4.29-1.36C32.83,2.27,30,0,30,0s-2.83,2.27-1.41,5.44c0,0-2.79-1-4.3,1.36a4.74,4.74,0,0,0,1.87.81,4.64,4.64,0,0,0,2-.06s-3.76,3.31-7.37.11a1.85,1.85,0,0,0,1.89-.77,2.43,2.43,0,0,0-1.08-.79A2.5,2.5,0,0,0,20.3,6s-.84-3.06-3.59-3.36A28.44,28.44,0,0,1,19.44,11a.8.8,0,0,1,.58.17.76.76,0,0,1,.3.53.81.81,0,0,1-.67.91c.08.75.12,3.72.12,4.52a31.12,31.12,0,0,1,9.8-1.71,40.51,40.51,0,0,1,10.66,1.71c0-.79.05-3.76.12-4.52a.85.85,0,0,1-.31-.09.82.82,0,0,1-.25-.21,1,1,0,0,1-.14-.29.69.69,0,0,1,0-.32.87.87,0,0,1,.1-.31,1,1,0,0,1,.22-.24.7.7,0,0,1,.29-.13.85.85,0,0,1,.32,0,28.54,28.54,0,0,1,2.73-8.37C40.54,3,39.7,6,39.7,6ZM30,12.06a1.42,1.42,0,0,1-.79-.25,1.39,1.39,0,0,1-.51-.64A1.38,1.38,0,0,1,29,9.63a1.38,1.38,0,0,1,.72-.39,1.51,1.51,0,0,1,.82.08,1.43,1.43,0,0,1,.64.53,1.39,1.39,0,0,1,.24.79,1.45,1.45,0,0,1-.11.54,1.51,1.51,0,0,1-.32.47,1.41,1.41,0,0,1-.46.3A1.5,1.5,0,0,1,30,12.06ZM60,47.14a30,30,0,1,1-30-30A30,30,0,0,1,60,47.14ZM30.86,26.71a1,1,0,0,1,1-1h1.43a1,1,0,0,1,1,1v4.75a25.69,25.69,0,0,1,2.87.78,20.19,20.19,0,0,1,3.71,1.66,13.92,13.92,0,0,1,3,2.1l-2.23,2.68a17.85,17.85,0,0,0-5.73-3.31,21.07,21.07,0,0,0-7.24-1.16,9.06,9.06,0,0,0-5.06,1.16A3.43,3.43,0,0,0,22,38.24a4.08,4.08,0,0,0,.31,1.65,4,4,0,0,0,1,1.3,9.79,9.79,0,0,0,2,1.12c.8.32,1.8.68,3,1.07l8.45,2.68a17.32,17.32,0,0,1,6.39,3.4,6.87,6.87,0,0,1,2.33,5.32,8.3,8.3,0,0,1-.81,3.62A7.44,7.44,0,0,1,42,61.31a14.47,14.47,0,0,1-4.7,1.92,21.66,21.66,0,0,1-3,.52v3.82a1,1,0,0,1-1,1H31.86a1,1,0,0,1-1-1V64h-.64l-1.08,0v3.64a1,1,0,0,1-1,1H26.71a1,1,0,0,1-1-1v-4l-.14,0a28,28,0,0,1-4.29-1A23.12,23.12,0,0,1,17.52,61a16.59,16.59,0,0,1-2.95-2.14l2.24-2.69a17.82,17.82,0,0,0,6,3.36,23.88,23.88,0,0,0,7.46,1.12c3,0,5.15-.42,6.4-1.26A3.92,3.92,0,0,0,38.5,55.9,3.5,3.5,0,0,0,37,53a16.26,16.26,0,0,0-5-2.28l-8.49-2.69a16.13,16.13,0,0,1-6.35-3.39A7.13,7.13,0,0,1,15,39.35a7,7,0,0,1,.76-3.17,7.73,7.73,0,0,1,2.46-2.73,12.55,12.55,0,0,1,4.2-1.88A19.75,19.75,0,0,1,25.71,31V26.71a1,1,0,0,1,1-1h1.43a1,1,0,0,1,1,1v4.15c.58,0,1.15,0,1.72.09Z"/></svg>
+                    
+                    <span class="header_logo_text">ZCode NFT</span>
+                </a>
+
+                <div class="nav__menu" id="nav-menu">
+                    <ul class="nav__list">
+                        <li class="nav__item">
+                            <a href="#get_nft" class="nav__link">Get NFT</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="#roadmap" class="nav__link">Roadmap</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="#nftnft" class="nav__link">What is NFT</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="#benefits" class="nav__link">Benefits</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="#faqs" class="nav__link">FAQs</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="#community" class="nav__link">Z-Community</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="#support" class="nav__link">Support</a>
+                        </li>
+                    </ul>
+
+                    <div class="nav__close" id="nav-close">
+                        <i class="ri-close-line"></i>
+                    </div>
+                </div>
+
+                <div class="nav__btns">
+                    <!-- Theme change button -->
+                    <i class="ri-moon-line change-theme" id="theme-button"></i>
+
+                    <div id="country-select">
+                        <div class="select-lang">
+                            <div class="options">
+                                <div class="option" id="lang1">
+                                    <input type="radio" name="flag" id="germany" checked />
+                                    <label for="germany">
+                                        <img src="https://cdn.jsdelivr.net/gh/hampusborgos/country-flags@main/svg/us.svg" alt="" />
+                                    </label>
+                                </div>
+                                <div class="option" id="lang2">
+                                    <input type="radio" name="flag" id="france" />
+                                    <label for="france">
+                                        <img src="https://flagicons.lipis.dev/flags/4x3/es.svg" alt="" />
+                                    </label>
+                                </div>
+                                <div class="option" id="lang3">
+                                    <input type="radio" name="flag" id="unitedKingdom" />
+                                    <label for="unitedKingdom">
+                                        <img src="https://flagicons.lipis.dev/flags/4x3/ru.svg" alt="" />
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="nav__toggle" id="nav-toggle">
+                        <i class="ri-menu-line"></i>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <main class="main">
+            <!--==================== HOME ====================-->
+            <section class="home" id="home">
+                <div class="home__container container grid">
+                    <img src="assets/img/hero___img.png" alt="" class="home__img">
+                    <!-- <lottie-player src="https://assets5.lottiefiles.com/packages/lf20_ztprgcoz.json" class="home__img" background="transparent"  speed="1"  loop autoplay></lottie-player> -->
+
+                    <div class="home__data">
+                        <h1 class="home__title">
+                            The BABY Zcode Doges are being born
+                        </h1>
+                        <p class="home__description">
+                            Zcode doge are unique, handmade, and randomly generated 3D NFT Social Avatars.
+                        </p> 
+                        <!-- <a  class="button button--flex" id="connectButton" disabled>
+                            Wallet </i>
+                        </a> -->
+                        <a  class="button button--flex" href="#main__anchor">
+                            Get Whitelisted
+                        </a>
+                        
+                        <button class="lets-play letsplay--flex lets-play__prop" data-video="https://www.youtube.com/watch?v=5UTgqk5T00M"><i class="ri-play-circle-fill lets-play-icon"></i><p>Watch Video</p></button>
+                    </div>
+                    
+
+                    <div class="home__social">
+                        <span class="home__social-follow">Follow Us</span>
+
+                        <div class="home__social-links">
+                            <a href="https://twitter.com/zcodesystempick" target="_blank" class="home__social-link">
+                                <i class="ri-twitter-fill"></i>
+                            </a>
+                            <a href="https://t.me/Zcoders/" target="_blank" class="home__social-link">
+                                <i class="ri-telegram-fill"></i>
+                            </a>
+                            <a href="https://discord.com/invite/nftzcodedoges" target="_blank" class="home__social-link">
+                                <i class="ri-discord-fill"></i>
+                            </a>
+                            <a href="https://www.youtube.com/channel/UC6EyWXUf19isJxwHrqWa_AA" target="_blank" class="home__social-link">
+                                <i class="ri-youtube-fill"></i>
+                            </a>
+                            <a href="https://www.instagram.com/sportspicks_zcode/?hl=en" target="_blank" class="home__social-link">
+                                <i class="ri-instagram-line"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+            <!--==================== Only Text Section ====================-->
+            <section class="about section container" >
+                <div class="about__container grid">
+                    <h2 class="section__title about__title width__set">
+                        READY TO TAKE OVER THE METAVERSE AND THE NFT SPACE ?
+                    </h2>
+                    <div class="about__data">
+                        <div class="about__details">
+                            <P>TIRED OF fly-by-night NFT cash grab SCAMS that are based on nothing but thin air, which then fail quickly after the launch leaving their buyers with a bag of worthless tokens?<br><br>
+                                Get into NFT project based on REAL UTILITY and REAL COMMUNITY.
+                                Zcode has been producing industry-standard sports predicton tools since 1999.<br><br>
+                                No matter whether you live and breathe crypto or have never held Bitcoin in your life, there is a HUGE opportunity to get onboard the new NFT train!</P>
+                        </div> 
+                    </div>
+                </div>
+            </section>
+
+
+
+            <!--==================== Countddown ====================-->
+            <section class="steps section container" id="get_nft">
+                <div class="steps__bg__presale">
+                    <div class="blob3"><img src="assets/img/blob3.svg" alt=""></div>
+                    <h2 class="section__title-center">
+                         Zcode Doge VIP Prelaunch 9<sup>th</sup> MARCH 2022<br> at 7 AM EST
+                    </h2>
+                    <p class="product__description">
+                        Join Zcode VIP Club or Get Whitelisted on Discord for priority access to presale
+                    </p> 
+                        <div>   
+                            <div id="countdown-box" class="cdb">
+                                <div class="cdi">
+                                    <span id="d">0</span>
+                                    <div id="d-lbl" class="cdi-lbl">DAYS</div>
+                                </div>
+                                <div class="cdi">
+                                    <span id="h">0</span>
+                                    <div id="h-lbl" class="cdi-lbl">HOURS</div>
+                                </div>
+                                <div id="m-break"></div>
+                                <div class="cdi">
+                                    <span id="m">0</span>
+                                    <div id="m-lbl" class="cdi-lbl">MINUTES</div>
+                                </div>
+                                <div class="cdi">
+                                    <span id="s">0</span>
+                                    <div id="s-lbl" class="cdi-lbl">SECONDS</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div >
+                            <p class="about__description top__margin">
+                                Get ready for <b>9<sup>th</sup> MARCH 2022 at 7 AM EST</b> for the launch of the  Zcode Doge Presale! where the entire collection will be available and ready to be minted. And, three good reasons to be among the first are:
+                            </p>
+                            <p class="timer__details-description">
+                                <i class="ri-checkbox-fill timer__details-icon"></i>
+                                The earlier you buy the less you will pay (Prices are going up 2x when 50% of NFTs are sold and 2X more when 75% are sold. Hurry up to get early bird low price)
+                            </p>
+                            <p class="timer__details-description">
+                                <i class="ri-checkbox-fill timer__details-icon"></i>
+                                One top rarity Zcode Doge will be given randomly to the first 55% buying a Zcode Doge
+                            </p>
+                            <p class="timer__details-description">
+                                <i class="ri-checkbox-fill timer__details-icon"></i>
+                                PRESALE is only available to our ZCode VIP members and Whitelisted Discord followers.
+                            </p>
+                            <p class="about__description top__margin">
+                                Invite your friends using an affiliate link to get a chance to win a Platinum Zcode Doge Everything will disappear quickly, so mark this date in your diaries! <b>EARLIER YOU BUY - CHEAPER YOU PAY. THE EARLY BIRD CATCHES THE Zcode Doge!</b> &nbsp; Don&rsquo;t miss out. Over 46,000 subscribers are on our waiting list on Telegram!
+                            </p>
+                        </div>
+
+                    </div>    
+                </div>
+            </section>
+
+
+            <!--==================== Generate Link Section ====================-->
+            <section class="about section container" id="about">
+                <div class="grid generate__link">
+
+                    <div class="about__data">
+                        <h2 class="section__title about__title">
+                            Spread the word and get <span class="generate__title">50%</span> commission
+                        </h2>
+
+                        <div class="about__details">
+                            <p class="about__details-description">
+                                Get your personal unique link and spread the word to get 50% commission on each NFT sale! Instant Payout!
+                            </p>
+
+                            <div class="whitelist_container2">
+                                <input type="email" placeholder="Connect Wallet to generate link" class="footer__input" id="myText1">
+                                <button class="button button--flex footer__button" id="connect__wallet" onclick="getAffiliate()">
+                                    Connect Wallet
+                                    <i class="ri-arrow-right-up-line button__icon"></i>
+                                </button>
+                            </div>
+
+
+                            <p class="about__details-description">
+                                <p><b>Rules:</b></p>
+                                1. Share on social media and invite your friends. Do NOT spam.<br>
+                                2. You can’t refer yourself.<br>
+                                3. Please connect wallet to generate referral code.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="block__align-center"><img src="assets/img/percentageimage.png" alt="" class="about__imgGenerate"></div>
+                    <div class="blob7"><img src="assets/img/redArrrow.png" alt=""></div>
+
+                </div>
+            </section>
+
+
+
+            <!--==================== ABOUT ====================-->
+            <section class="about container steps__bg__presale2" id="about">
+                <div class="about__container grid">
+                    <img src="assets/img/about.png" alt="" class="about__img__affiliate">
+
+                    <div class="about__data">
+                        <h2 class="section__title about__title">
+                            Get a chance to win a Platinum  Zcode Doge. 
+                        </h2>
+
+                        <p class="about__description">
+                            Invite your friends using an affiliate link to get a chance to win a Platinum  Zcode Doge. Some minor rules are :
+                        </p>
+
+                        <div class="about__details">
+                            <p class="about__details-description">
+                                <i class="ri-checkbox-fill about__details-icon" id="main__anchor"></i>
+                                For each legitimate subscriber to the Whitelist coming from your link, you will get one ticket giving you a chance to gain 1 of our 3 Platinum  Zcode Doge. 
+                            </p>
+                            <p class="about__details-description">
+                                <i class="ri-checkbox-fill about__details-icon"></i>
+                                There will be three winners, announced after the REVEAL DAY. Don’t miss the chance, shill it now on Twitter, Discord, Tik Tok and all your social networks!
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <h2 class="about__description center__text vip__presale entrYouremail top__margin" id="entrYouremail">
+                    ENTER YOUR EMAIL BELOW TO WHITELIST FOR PRIORITY ACCESS TO VIP PRESALE and RECEIVE YOUR AFFILIATE LINK
+                </h2>
+                <div class="whitelist_container">                    <input type="email" placeholder="Enter your email" class="footer__input" id="myText">
+
+                    <button class="button button--flex footer__button" id="whitelist__button" onclick="changeText()">
+                        Whitelist Me
+                        <i class="ri-arrow-right-up-line button__icon"></i>
+                    </button>
+                </div>
+
+            </section>
+
+
+            <!--==================== NEXT BIG THING ====================-->
+            <section class="questions section" id="nftnft">
+        
+                <div class="questions__container container grid">
+                    <div class="about__data">
+                        <h2 class="section__title about__title">
+                            The NEXT BIG THING IS NFT
+                        </h2>
+
+                        <p class="about__details-description">
+                            During the last years the NFT community changed a lot. The era of one-day-wonder scam NFT launches is over, it’s time for real NFT projects based on real utility to take over the market.<br>
+                            <div class="mid__container">
+                                <p class="about__details-description">This is a new era of 3d collections, WEB 3.0 and metaverses has arrived. Time has changed so did the tools.</p><br>
+                            </div>
+                        </p>
+                        <p class="about__details-description">
+                            Are you ready to embrace the future world of crypto metaverses with us? Our NFT is your first step, a ticket into this amazing new world. Our NFT is for those who don't want to miss the departing NFT train, to those who want to get into the NFT community without big financial investments and risks.
+                        </p>
+                    </div>
+                    <img src="assets/img/what is nft.png" alt="" class="whatisnft__img">
+                </div>
+                <div >
+                    <p class="questions__container container center__text">
+                        Zcode doge are unique, handmade, and randomly generated 3D NFT Social Avatars. Some appear normal. Some look weird. Some are just damn cool!  Maybe some even look familiar! No two of them are identical. Each Doge is unique and algorithmically generated from over 150 possible traits, including expression,  headwear, clothing, and more. All doges are dope, but some are rarer than others.
+                    </p>
+                    <img src="assets/img/horizontal_nft_image.png" class="horizontal__image" alt="horizontal image">
+                    <p class="questions__container container">
+                        The doges are stored as ERC-721 tokens on the Polygon blockchain and hosted on IPFS.   When you buy a rare Zcode Doge, you’re not simply buying an avatar or a probably-rare piece of art. You are gaining VIP membership access to a club whose benefits and offerings will increase over time. Your Zcode Doge can serve as your digital identity key, and open digital doors for you.
+                    </p>
+                </div>
+
+                <div class="container">
+                    <div class="about__data">
+                        <h2 class="section__title about__title container">
+                            WHY DOGE ?
+                        </h2>
+                        <div class="about__details">
+                            <p class="about__details-description">
+                                <i class="ri-checkbox-fill about__details-icon"></i>
+                                Doge is a fun and popular character well known in the crypto world. 
+                            </p>
+                            <p class="about__details-description">
+                                <i class="ri-checkbox-fill about__details-icon"></i>
+                                Doge-related NFTs usually succeed with a huge trade volume. For example The Doge Pound has a total epic volume of 25,790.57 Matic (~ $83,494, 351 USD), dogedash has volume of 223.51 Matic, Doge Pound Puppies 3,021.46 Matic
+                            </p>
+                            <p class="about__details-description">
+                                <i class="ri-checkbox-fill about__details-icon"></i>
+                                We don't want to reinvent the wheel and go with a proven concept however instead of overused pixel art we went with a new Metaverse-style VOXEL art.
+                            </p>
+                            <p class="about__details-description">
+                                <i class="ri-checkbox-fill about__details-icon"></i>
+                                Our Doge idea might not be super original but we did not want to go lazy route by doing a clone of Crypto punks, Bored Ape club, and other popular collections that were copied a million times over.
+                            </p>
+                        </div>
+                    </div>
+                    <!--
+                    <div class="moon__container">
+                        <div class="about__data container">
+                            <h2 class="section__title about__title container">
+                                Elon Musk is literally<br> sending Dogecoin to the moon,
+                            </h2>
+                            <p class="about__details-description">
+                                His commercial rocket company SpaceX has announced that it will launch DOGE-1 Mission to the Moon" in the first quarter of next year. Elon Musk recently tweeted Tesla would accept Dogecoin as payment for merchandise quickly skyrocketing its value.
+                            </p>
+                        </div>
+                    
+                        <lottie-player src="https://assets7.lottiefiles.com/packages/lf20_9x9pt4gf.json" class="moon__image" background="transparent"  speed="1" loop  autoplay></lottie-player>
+                    </div>
+                    -->
+                </div>
+            </section>
+
+
+            <!--==================== WHy not screnshot ====================-->
+            <section class="about section container" id="about">
+                <div class="about__container grid">
+                    <img src="assets/img/no__screenshot.png" alt="" class="about__img">
+
+                    <div class="about__data">
+                        <h2 class="section__title about__title">
+                            Why can’t I just take a screenshot of the NFT or right-click and save the JPG for free???
+                        </h2>
+
+                        <div class="about__details">
+                            <p class="about__details-description">
+                                That’s the most common question :) Yes, you can technically right-click and save. It's the same image after all – but it doesn't grant you the legal rights or the legit feeling of owning that NFT. It's not yours. You DON’T own it. You merely own a copy.
+                            </p>
+                            <!-- <p class="about__details-description">
+                                The best analogy is like clicking a photo of the famous Mona Lisa. You can take as many photos as you want, they are free and worthless. However, the original Mona Lisa is one of its kind and is believed to be worth more than $850 million.
+                            </p> -->
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!--==================== WHy to buy NFT ====================-->
+            <section class="questions section" id="whatisnft">
+                
+                <div class="questions__container container grid">
+                    <div class="about__data" data-sr-id="14" style="visibility: visible; opacity: 1; transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); transition: opacity 2.5s cubic-bezier(0.5, 0, 0, 1) 0.4s, transform 2.5s cubic-bezier(0.5, 0, 0, 1) 0.4s;">
+                        <h2 class="section__title about__title">
+                            Why would anyone pay millions for NFT art?
+                        </h2>
+
+                        <p class="about__details-description">
+                            Why would you pay $35,000 for a Rolex, when you can get a knockoff for $350? Or perhaps more importantly, why do knockoffs exist at all? Because they are STATUS symbols.
+                        </p>
+                        <p class="about__details-description">
+                            People buy and collect valuable items because they want it to say something about themselves. Ownership of different NFTs can accomplish that. In an analog world, we buy houses, fancy cars, and expensive watches in order to project our status. In a digital world, no one cares about your car. But your avatar can project value, simply by the virtue of it being part of a limited edition of valuable NFTs. You can also resell your NFTs on Opensea market to make money on their growing value.
+                        </p>
+                    </div>
+                    <div>
+                        <img src="assets/img/pay__millions.png" alt="" class="about__img" data-sr-id="6" style="visibility: visible; opacity: 1; transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); transition: opacity 2.5s cubic-bezier(0.5, 0, 0, 1) 0.4s, transform 2.5s cubic-bezier(0.5, 0, 0, 1) 0.4s;">
+                        <div class="mid__container">
+                            <p class="about__details-description">IN A DIGITAL WORLD, NO ONE CARES ABOUT YOUR LUXURY CAR OR ROLEX</p><br>
+                        </div>
+                    </div>
+                </div> 
+            </section>
+
+
+            <!--==================== Do people buy nfts really ====================-->
+            <section class="about section container" id="buy-nfts-really">
+                <h2 class="section__title about__title">
+                    Do people really buy NFTs???
+                </h2>
+
+                    <p class="about__description">
+                        Absolutely, and PLENTY of them! People are paying insane amounts for NFTs these days!
+                    </p>
+
+                    <div class="about__details">
+                        <p class="about__details-description">
+                            <i class="ri-checkbox-fill about__details-icon"></i>
+                            Beeple – EVERYDAYS: THE FIRST 5000 DAYS was sold for incredible $69.3m<br>
+                            Beeple – Human One Sold for $28.9m <br>
+                            CryptoPunk 4156 Sold for 2,500 ETH ($10.2m) <br>
+                        </p>
+                        <p class="about__details-description">
+                            <i class="ri-checkbox-fill about__details-icon"></i>
+                            Other top NFT sales throughout 2021 include the $7m purchase of ‘Right-click and Save As guy‘ by prominent collector ‘CozomoMedici’, a $6.6m ‘Zombie’ CryptoPunk sale and the highly publicised $6.4m purchase of Ross Ulbricht’s debut NFT ‘Persistence’.
+                        </p>
+                    </div>
+                <img src="assets/img/do_people_buy_nfts.png" alt="">
+
+
+                <div class="moon__container about__container grid">
+                    <div class=" top__margin">
+                        <p class="about__details-description">
+                            And this is only the beginning! Take a look at Google trends, it is growing exponentially - the sky is the limit!<br><br>
+                            NFTs market reached $22bn in 2021 and it's just the start. Get on board before it's too late.
+                        </p>
+                    </div>
+                    <img src="assets/img/chart2.png" alt="">
+                </div>
+
+                <div class="moon__container about__container grid">
+                    <img src="assets/img/nft-band.png" alt="">
+                    <div class=" top__margin">
+                        <h2 class="section__title about__title">
+                            NFT TRAIN IS DEPARTING. <b>HURRY UP!</b>
+                        </h2>
+                        <p class="about__details-description">
+                            Grimes, Tom Brady and Eminem have jumped onto the NFT bandwagon, releasing unique pieces of recognition, artwork and even music tracks as securitized NFTs. Further more, big brands are getting into the game with companies like Taco Bell, Coca Cola, Pizza Hut and Pringles coming out with their own NFTs. Even Visa bought an NFT for $150,000 this year and Adidas forked over another $156,000 for a digital piece of art!
+                        </p>
+                    </div>
+                </div>
+
+            </section>
+            
+
+           <!--==================== how to buy nfts ====================-->
+           <section class="steps section container" id="get_nft">
+            <div class="steps__bg__presale">
+                <div class="blob3"><img src="https://zcode.ai/images/metamask.png" alt=""></div>
+                <h2 class="section__title-center">
+                    Count me in!<br>
+                    How do I get my NFT?<br>
+                    I am new to this<br>
+                </h2>
+                <p class="product__description">
+                    NEW TO CRYPTO? DOWNLOAD OUR FULL, EASY GUIDE HERE OR FOLLOW THESE STEPS BELOW:
+                </p> 
+
+                <div>
+
+                    <p class="timer__details-description top__margin">
+                        <i class="ri-number-1 steps__details-icon"></i>
+                        Download and install Ethereum compatible wallet, for e.g. Metamask, which is suitable for smartphones and desktops.
+                    </p>
+
+                    <p class="timer__details-description top__margin">
+                        <i class="ri-number-2 steps__details-icon"></i>
+                        Deposit some ETH into your wallet. You can buy Ethereum (world's second largest cryptocurrency after Bitcoin) on popular exchanges such as Binance, Bittrex, Coinbase using credit card or bank wire.
+                    </p>
+
+                    <p class="timer__details-description top__margin">
+                        <i class="ri-number-3 steps__details-icon"></i>
+                        Go to Zcode NFT on minting day. Decide if you want to participate in Gold NFT lottery or get guaranteed rare NFTs. The rare NFTs are more expensive but they include guaranteed rewards such as VIP memberships and Masternoding program bonuses!
+                    </p>
+
+                    <p class="timer__details-description top__margin">
+                        <i class="ri-number-4 steps__details-icon"></i>
+                        Choose the amount of tokens you want to purchase. Remember, the maximum is 10 per user.
+                    </p>
+
+                    <p class="timer__details-description top__margin">
+                        <i class="ri-number-5 steps__details-icon"></i>
+                        Click on 'Mint' button and confirm the transaction. On your desktop, the Metamask extension will pop up with the confirmation message. Also, you need to have some extra ETH to proceed with the transaction, since you will will be paying gas fees* to miners.
+                    </p>
+
+                    <p class="timer__details-description top__margin">
+                        <i class="ri-number-6 steps__details-icon"></i>
+                        Go to Opensea.io. Log in with the Metamask wallet and check your freshly minted NFTs on the profile page. After the reveal day, the NFT will be revealed and you will find out which NFT you received.
+                    </p>
+
+                    <p class="timer__details-description top__margin">
+                        <i class="ri-number-7 steps__details-icon"></i>
+                        Share your NFTs on Discord, Twitter or any other social media network to increase the value of your NFTs.
+                    </p>
+
+                    <p class="timer__details-description top__margin">
+                        <p>
+                            <i class="ri-number-8 steps__details-icon"></i>
+                            You can hold your NFTs to increase the value, claim your VIP rewards or sell it on Opensea market - the choice is yours! <a href="https://zcode.ai/downloads/zcode_ntf_guide-en.pdf">CLICK TO SEE OUR STEP BY STEP GUIDE</a> (2 mins work)<br>*Gas fees do not depend on us but the network. We don't collect any money from this. Gas fees are usually less during the weekends and off-business hours (at night)
+                        </p>
+                    </p>
+                </div>
+
+
+                <div class="inner__metamusk">
+                    
+                    <div class="metamask-tutorial">
+                        <img data-src="https://zcode.ai/images/metamask.jpg" alt="" src="https://zcode.ai/images/metamask.jpg">
+                        <img class="play__btn lets-play" src="https://zcode.ai/images/go.svg" data-video="https://www.youtube.com/watch?v=ZugUPe64vdo" alt="">
+                    </div>
+
+                    <div class="pdf_download">
+                      <p class="f40_48">Download an easy<br>PDF GUIDE with<br>screenshots</p>
+                      <div class="Apply big button button--flex" name="Download"><a href="https://zcode.ai/downloads/zcode_ntf_guide-en.pdf" target="_blank">Download</a></div>
+                    </div>
+
+                  </div>
+            </div>    
+            
+        </section>
+
+
+
+           <!--==================== REWARD AND BENIFITS ====================-->
+           <section class="steps section container" id="benefits">
+            <div class="steps__bg">
+                <h2 class="section__title-center">
+                    ZCODE NFT REWARDS AND BENEFITS?
+                </h2>
+
+                <div class="steps__container grid ">
+                    <div class="blob1"><img src="assets/img/blob1.png" alt=""></div>
+                    <div class="blob2"><img src="assets/img/blob2.png" alt=""></div>
+                    <div class="steps__card">
+                        <div class="steps__card-number">
+                            <img src="assets/img/gold_temp.jpg" alt="gold eg nft template">
+                        </div>
+                        <h3 class="steps__card-title">GOLD NFT</h3>
+                        <p class="steps__card-description">
+                            Your key to NFT world : Zcode NFT is based on REAL utility and community since 1999 Great holding and reselling value Only 1000 Gold NFTs, minted by luck in a lottery with a chance to win Platinum and Legendary
+                        </p>
+                    </div>
+
+                    <div class="steps__card">
+                        <div class="steps__card-number">
+                            <img src="assets/img/platinum_temp.jpg" alt="gold eg nft template">
+                        </div>
+                        <h3 class="steps__card-title">PLATINUM NFT</h3>
+                        <p class="steps__card-description">
+                            Medium rarity, only 40 NFTs! Outstanding rewards 3 months Zcode VIP membership worth 600 USD & 100 USD yield nodes bonus with 150% compounding APY* Great reselling value on Opensea Future Zcode Token Airdrop Bonuses
+                        </p>
+                    </div>
+
+                    <div class="steps__card">
+                        <div class="steps__card-number">
+                            <img src="assets/img/legendary_temp.jpg" alt="gold eg nft template">
+                        </div>
+                        <h3 class="steps__card-title">LEGENDARY NFT</h3>
+                        <p class="steps__card-description">
+                            Very rare 10 NFT total, Guaranteed rewards 12 months Zcode VIP membership worth 2300 USD & 500 USD yield nodes bonus with 150% compounding APY* Future Zcode Token Airdrop Bonuses Outstanding reselling value on Opensea
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+            <!--==================== EXTRA BENEFITS ====================-->
+            <section class="product section container" id="zcode_extra_benifit">
+                <h2 class="section__title-center">
+                    ZCODE NFT EXTRA BENEFITS FOR HOLDERS
+                </h2>
+<!-- 
+                <p class="product__description">
+                    After the main mint is completed, the holders will be rewarded with extra benefits
+                </p> -->
+
+                <div class="product__container grid">
+
+                    <article class="product__card1">
+                        <div class="product__circle1"></div>
+
+                        <img src="assets/img/product__imgA1.png" alt="" class="product__img">
+                        <h3 class="product__title">Passive Income</h3>
+                        <p class="presale__description">
+                            60% of all Opensea royalties will be sent back to active holders' wallets
+                        </p>
+                    </article>
+
+                    <article class="product__card1">
+                        <div class="product__circle1"></div>
+
+                        <img src="assets/img/product__imgA2.png" alt="" class="product__img">
+
+                        <h3 class="product__title">Giveaway Airdrops</h3>
+                        <p class="presale__description">
+                            Holders of the first-gen series#1 NFTs will receive giveaways and airdrops of the next-gen series#2 and series#3 NFT collections as a reward for their loyalty and support
+                        </p>
+                    </article>
+
+                    <article class="product__card1">
+                        <div class="product__circle1"></div>
+
+                        <img src="assets/img/product__imgA3.png" alt="" class="product__img">
+
+                        <h3 class="product__title">Staking & Pools</h3>
+                        <p class="presale__description">                      
+                            Priority access to the staking and private pools, as well as the launch of Zcode Coin
+                        </p>
+                    </article>
+                    
+                </div>
+            </section>
+            <!--==================== Zcode Utility and Products====================-->
+            <section id="zcode_extra_benifit">
+                <div class="product section container">
+                    <h2 class="section__title-center">
+                        Zcode Utility and Products
+                    </h2>
+                    <p>
+                        Zcode team (Zlab) has been developing sports prediction software and tools since 1999. You can check out most of our current and upcoming products and tools, such as famous Line reversals Tool, Zlive bot, Scores Predictor, Soccer Buddy, Sports Simulator and many more.
+                    </p>
+                </div>
+
+                <!-- GLIDES HTMLs STARTS -->
+                    <div class="glide__wrapper">
+                        <div class="glide">
+                            <div class="glide__track" data-glide-el="track">
+                              <ul class="glide__slides">
+                        
+                                <li class="glide__slide">
+                                  <div class="slide">
+                                    <img src="https://zcode.ai/images/product1.png" alt="">
+                                    <p class="slider__info">Popular Apps Such as Scores Predictor, Line Reversal, Zlive bot and Soccer Buddy <a href="https://zcodesystem.com/apps">https://zcodesystem.com/apps</a><p>
+                                  </div>
+                                </li>
+
+                                <li class="glide__slide">
+                                  <div class="slide">
+                                    <img src="https://zcode.ai/images/product2.png" alt="">
+                                    <p class="slider__info">Daily Cash Contests and Games Games of Skill, Spot The Ball, Pick a Winner etc.</p>
+                                  </div>
+                                </li>
+
+                                <li class="glide__slide">
+                                  <div class="slide">
+                                    <video width="390" height="260" class=" lazyloading" data-src="https://zcode.ai/images/product3.mp4" autoplay="" loop="" src="https://zcode.ai/images/product3.mp4"></video>
+                                        <p class="slider__info">Zcode Doge Soccer Buddy App A new upcoming metaverse game</p>
+                                  </div>
+                                </li>
+
+                                <li class="glide__slide">
+                                  <div class="slide">
+                                    <img src="https://zcode.ai/images/product4.png" alt="">
+                                        <p class="slider__info">Zcode Sports Simulator Predict the winner before it happens with a new tool <a href="https://zcodesystem.com/simulator/">https://zcodesystem.com/simulator/</a></p>
+                                  </div>
+                                </li>
+                                
+                                <li class="glide__slide">
+                                  <div class="slide">
+                                    <img src="https://zcode.ai/images/product5.jpg" alt="">
+                                        <p class="slider__info">Professional Sports Tools - Soccer Buddy for Desktop and Mobile <a href="https://zcodesystem.com/soccerbuddy/">https://zcodesystem.com/soccerbuddy/</a></p>
+                                  </div>
+                                </li>
+                        
+                              </ul>
+                            </div>
+                            <div class="glide__controls" data-glide-el="controls">
+                              <button class="glide__arrow glide__arrow--left" data-glide-dir="|<">prev</button>
+                              <button class="glide__arrow glide__arrow--right" data-glide-dir="|>">next</button>
+                            </div>
+                            <div class="glide__bullets" data-glide-el="controls[nav]">
+                              <button class="glide__bullet" data-glide-dir="=0"></button>
+                              <button hidden></button>
+                              <button hidden></button>
+                              <button class="glide__bullet" data-glide-dir="=3"></button>
+                              <button hidden></button>
+                              <button hidden></button>
+                              <button class="glide__bullet" data-glide-dir="=6"></button>
+                              <button hidden></button>
+                              <button hidden></button>
+                            </div>
+                        </div>
+                    </div>
+                <!-- GLIDE HTML ENDs -->
+
+            </section>
+
+
+
+            <!--==================== Roadmap ====================-->
+            <section class="questions section roadmap__margin" id="roadmap">
+                <h2 class="section__title-center">
+                    ROADMAP
+                </h2>
+
+                <div class="">
+                    <div class="swiper-container-wrapper swiper-container-wrapper--timeline">
+                      <!-- Timeline -->
+                      <ul class="swiper-pagination-custom">
+                        <li class='swiper-pagination-switch first active'><span class='switch-title'>Start</span></li>
+                        <li class='swiper-pagination-switch last'><span class='switch-title'>10 %</span></li>
+                        <li class='swiper-pagination-switch'><span class='switch-title'>20 %</span></li>
+                        <li class='swiper-pagination-switch'><span class='switch-title'>30 %</span></li>
+                        <li class='swiper-pagination-switch last'><span class='switch-title'>40%</span></li>
+                        <li class='swiper-pagination-switch last'><span class='switch-title'>50 %</span></li>
+                        <li class='swiper-pagination-switch last'><span class='switch-title'>60 %</span></li>
+                        <li class='swiper-pagination-switch last'><span class='switch-title'>70 %</span></li>
+                        <li class='swiper-pagination-switch last'><span class='switch-title'>80 %</span></li>
+                        <li class='swiper-pagination-switch last'><span class='switch-title'>90 %</span></li>
+                        <li class='swiper-pagination-switch last'><span class='switch-title'>100 %</span></li>
+                      </ul>
+                      <!-- Progressbar -->
+                      <div class="swiper-pagination swiper-pagination-progressbar swiper-pagination-horizontal"></div>
+                      <!-- Swiper -->
+                      <div class="swiper swiper-container swiper-container--timeline">
+                        <div class="swiper-wrapper">
+                          <!-- Slides -->
+                          <div class="swiper-slide">
+                                <span class="product__description"><h2 class="section__title-center">22/2/2022<br>VIP Presale starts</h2>
+                                    The main goal is to make sure your investment and our mint are as successful as possible, to achieve all of our goals.On pre-sale, you can mint up to 500 NFTs at the lowest price and on Public Sale, you can mint the remaining 500 NFTs.
+                                </span>
+                          </div>
+                          <div class="swiper-slide">
+                                <span class="product__description"><h2 class="section__title-center">24/2/2022<br>Public mint is LIVE</h2>
+                                    You can now mint the remaining 500 NFTs The price of the remaining NFTs is increased 2x when 50% is sold and 2x more when 75% is sold. Early bird gets the best price Marketing starts and listing on popular sites like a rarity tools Coingecko & Coinmarketcap.
+                                </span>
+                          </div>
+                          <div class="swiper-slide">
+                                <span class="product__description"><h2 class="section__title-center">20% - NFT Reveal Event</h2>
+                                    NFT sales are LIVE on Opensea Marketing campaigns and partnerships. Secondary market massive sales listing on popular crypto NFT sites. And Affiliate contest prize draw using Chainlink VRF (Verifiable Random Function).
+                                </span>
+                          </div>
+                          <div class="swiper-slide">
+                                <span class="product__description"><h2 class="section__title-center">30% - VIP rewards are offered</h2>
+                                    NFT HOLDERs rewards are paid (VIP memberships, Masternoding bonuses) with Giveaways & Airdrops
+                                </span>
+                          </div>
+                          <div class="swiper-slide">
+                                <span class="product__description"><h2 class="section__title-center">40% - GENERATION 2</h2>
+                                    Baby Doge Launch Generation 2 NFT collection is launched 3000 new NFTs are released. And VIP launch to Gen1 holders.
+                                </span>
+                          </div>
+                          <div class="swiper-slide">
+                                <span class="product__description"><h2 class="section__title-center">50% - New APPs development</h2>
+                                    We already developed several successful Zcode apps such as the ZLIVE live betting bot,  Scores predictor and Line Reversals apps. We will expand the app network with a new Soccer Buddy App.
+                                </span>
+                          </div>
+                          <div class="swiper-slide">
+                                <span class="product__description"><h2 class="section__title-center">60% - GENERATION 3</h2>
+                                    Pixel doge collection is launched 5000 new NFTs are released VIP launch to Gen1 and Gen2 holders, Giveaways & Airdrops.
+                                </span>
+                          </div>
+                          <div class="swiper-slide">
+                                <span class="product__description"><h2 class="section__title-center">70% - NFT Spotter development</h2>
+                                    A fully automated NFT spotter tool will let you scan and research all upcoming and existing NFT projects on the market and spot potential gems with high-profit potential.
+                                </span>
+                          </div>
+                          <div class="swiper-slide">
+                                <span class="product__description"><h2 class="section__title-center">80% - Charity Program</h2>
+                                    10% of the royalty funds collected on Opensea after launch sales will be used to form the kids sports donation fund to support young sports teams and individuals
+                                </span>
+                          </div>
+                          <div class="swiper-slide">
+                                <span class="product__description"><h2 class="section__title-center">90% - Metaverses integration</h2>
+                                    Avatars are integrated to popular metaverses which ensures further growth in value.
+                                </span>
+                          </div>
+                          <div class="swiper-slide">
+                                <span class="product__description"><h2 class="section__title-center">100%</h2>
+                                    Creation of ZCODE COIN  as a new cryptocurrency.  Zcode crypto will allow new rewards and benefits to the NFT holders, increasing at the same time Metaverse Impact.
+                                </span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+            </section>
+
+
+
+            <!--==================== WHY ZCODE NFT ====================--> 
+            <section class="steps section container">
+                <div class="steps__bg">
+
+                    <h2 class="section__title-center">
+                        Why get Zcode NFT?
+                    </h2>
+                    <div class="steps__container grid">
+                        <div class="blob4"><img src="assets/img/blob4.png" alt=""></div>
+                        <div class="blob5"><img src="assets/img/blob5.png" alt=""></div>
+                        <div class="blob6"><img src="assets/img/blob6.png" alt=""></div>
+                        <div class="steps__card">
+                            <img src="assets/img/utilityicon.png" class="steps__card-icon" alt="">
+                            <h3 class="steps__card-title">Based on REAL UTILITY</h3>
+                            <p class="steps__card-description">
+                                While 98.6% of other NFT launches are pure scams and are based on nothing but empty promises like “growing communities, creating games and metaverses” our NFT is based on A REAL existing product - Zcode sports prediction system which is an industry standard since 1999.
+                            </p>
+                        </div>
+
+                        <div class="steps__card">
+                            <img src="assets/img/communityicon.png" class="steps__card-icon" alt="">
+                            <h3 class="steps__card-title">REAL COMMUNITY</h3>
+                            <p class="steps__card-description">
+                                You are not alone! While most other NFT launches buy fake followers, our Zcode VIP community is REAL and cannot be faked. You can login to Zcode VIP members area and join our VIP WALL where experts and followers are posting winning sports picks and predictions.
+                            </p>
+                        </div>
+
+                        <div class="steps__card">
+                            <img src="assets/img/eadytradeicon.png" class="steps__card-icon" alt="">
+                            <h3 class="steps__card-title">EASY TRADE</h3>
+                            <p class="steps__card-description">
+                                Full OpenSea and Rarity compatibility along with other platforms and NFT wallets. If you are lucky and mint one of our rare NFT you can 2x, 5x, maybe even 10x the value of your investment within a few days. You can resell your NFTs on Opensea and make solid profits.
+                            </p>
+                        </div>
+
+                        <div class="steps__card">
+                            <img src="assets/img/audit icon.png" class="steps__card-icon" alt="">
+                            <h3 class="steps__card-title">AUDITED</h3>
+                            <p class="steps__card-description">
+                                Our Zcode NFT smart contract is fully audited by several industry leading crypto experts and auditors.
+                            </p>
+                        </div>
+
+                        <div class="steps__card">
+                            <img src="assets/img/verified icon.png" class="steps__card-icon" alt="">
+                            <h3 class="steps__card-title">VERIFIED</h3>
+                            <p class="steps__card-description">
+                                All our Zcode system picks and systems are fully verified by 3rd part monitoring. Our NFT smart contract Code Verified - View in <a href="https://polygonscan.com/">Polygonscan.com</a>
+                            </p>
+                        </div>
+
+                    </div>
+                </div>
+            </section>   
+
+                     
+
+            <!--==================== How to get NFTs ====================-->
+            <section class="questions section" id="whatisnft">
+                
+                <div class="questions__container container grid">
+                    <div class="about__data">
+                        <h2 class="section__title about__title">
+                            What is NFT? I'm new to this
+                        </h2>
+
+                        <p class="about__details-description">
+                            Did you know that Right now thousands of people make millions of dollars buying and selling NFTs! NFT seem complicated but the concept is simple. Basically, you are buying verified ownership of a digital item like art or music. Just like when you buy a car you get a title or when you buy a house you get a deed. Buying NFT is like buying a contract that proves you OWN that item. It's unique and it only belongs to you. It's not much different from traditional art collecting except it's all digital.
+                        </p>
+
+                        <h3 class="section__title about__title top__margin">
+                            Is it for REAL???
+                        </h3>
+                        <p class="about__details-description">
+                            Owning NFT is similar to owning a traditional sports cards collection with unique and limited amount of rare cards. The first sports card to sell for one million dollars was a T206 Honus Wagner which went for $1,265,000 at auction back in 2000.  As of 2022 the industry brings in over one billion dollars annually for manufacturers and retailers.
+                        </p>
+                    </div>
+                    <img src="assets/img/nft_image_benifits.png" alt="" class="about__img">
+                </div> 
+            </section>
+
+
+            <!--==================== ZCODE GIVING BACK TO SPORTS ====================-->
+            <section class="about section container" id="about">
+                <div class="about__container grid">
+                    
+                    <div class="about__data">
+                        <h2 class="section__title about__title">
+                            ZCODE GIVING BACK TO SPORTS
+                        </h2>
+                        <p class="about__description">
+                            Zcode System loves sports and the creators of the company were all impacted by various sports from an early age. 
+                            That is why Zcode System is giving back and donating a variety of items to some very lucky youth clubs and sports schools. 
+                        </p>
+                        <p class="about__description">
+                            This is NOT an NFT scam with the typical empty promises such as “Donate to save penguines or apes”... It’s a REAL project that we've been working on for several years! Check our case studies to see the projects we have already completed.
+                        </p>
+                        <p class="about__description">
+                            Our all-new charity program 'Zcode System giving back to Sports' gives us the chance to support kids clubs and sports schools in different countries. Our aim is to provide these organizations with the necessary equipment needed to be successful.
+                        </p>
+                    </div>
+                    <img src="assets/img/ZCODE_sports_collage.png" alt="" class="about__img">
+                </div>
+            </section>
+
+
+            <!--==================== JOIN OUR ZCODE VIP COMMUNITY ====================-->
+            <section class="about section container" id="community">
+                <div class="about__container grid">
+                    <img src="assets/img/Zcode join our community.png" alt="" class="about__img">
+                    <div class="about__data">
+                        <h2 class="section__title about__title">
+                            JOIN OUR ZCODE VIP COMMUNITY
+                        </h2>
+                        <p class="about__description">
+                            REAL COMMUNITY - You are not alone! We don’t hide behind anonymous avatars. While most other NFT launches buy fake followers, our Zcode VIP community is REAL and cannot be faked. You can log in to the Zcode VIP members area and join our VIP WALL where experts and followers are 
+                            posting winning sports picks and predictions. We are a MULTI LANGUAGE Community.
+                        </p>
+                        <div class="about__details">
+                            <p class="about__details-description">
+                                <i class="ri-checkbox-fill about__details-icon"></i>
+                                WE SPEAK ENGLISH
+                            </p>
+                            <p class="about__details-description">
+                                <i class="ri-checkbox-fill about__details-icon"></i>
+                                HABLAMOS ESPAÑOL
+                            </p>
+                            <p class="about__details-description">
+                                <i class="ri-checkbox-fill about__details-icon"></i>
+                                WIR SPRACHEN DEUTSCH
+                            </p>
+                            <p class="about__details-description">
+                                <i class="ri-checkbox-fill about__details-icon"></i>
+                                ON PARLE FRANÇAIS
+                            </p>
+                            <p class="about__details-description">
+                                <i class="ri-checkbox-fill about__details-icon"></i>
+                                МЫ ГОВОРИМ ПО РУССКИ
+                            </p>
+                        </div>
+                        <a href="#main__anchor" class="button button--flex">
+                            Get Whitelisted
+                        </a>
+                       
+                    </div>
+                </div>
+            </section>
+
+            
+
+            <!--==================== FAQS ====================-->
+            <section class="questions section top__margin" id="faqs">
+                <h2 class="section__title-center questions__title container">
+                    Some common questions <br> were often asked
+                </h2>
+
+                <div class="questions__container container grid">
+                    <div class="questions__group">
+                        <div class="questions__item">
+                            <header class="questions__header">
+                                <i class="ri-add-line questions__icon"></i>
+                                <h3 class="questions__item-title">
+                                    What is your smart contract address ?
+                                </h3>
+                            </header>
+
+                            <div class="questions__content">
+                                <p class="questions__description">
+                                    <a  class=" button button--flex" id="getAccounts">
+                                        Click here to view <i class="ri-arrow-down-s-line"></i>
+                                    </a>
+                                    <span id="getAccountsResult"></span>
+                                    <br><a href="#">For Detailed information click here</a>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="questions__item">
+                            <header class="questions__header">
+                                <i class="ri-add-line questions__icon"></i>
+                                <h3 class="questions__item-title">
+                                    How can I mint a NFT?
+                                </h3>
+                            </header>
+
+                            <div class="questions__content">
+                                <p class="questions__description">
+                                    You have to enter in one of our VIP pre-sale or public sale  and mint it in our website zcode.io 
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="questions__item">
+                            <header class="questions__header">
+                                <i class="ri-add-line questions__icon"></i>
+                                <h3 class="questions__item-title">
+                                    How to purchase a NFT?
+                                </h3>
+                            </header>
+
+                            <div class="questions__content">
+                                <p class="questions__description">
+                                    The easiest way is to install a MetaMask ( https://metamask.io/)  extension in your  chrome browser and link your crypto wallet to our website. Ensure you have enough Matic in your wallet to cover the cost of a NFT plus the associated gas fees. For example 0.08 MATIC for NFT + 0.02 MATIC for gas. Approve the desired transaction on MetaMask and you are all set.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="questions__item">
+                            <header class="questions__header">
+                                <i class="ri-add-line questions__icon"></i>
+                                <h3 class="questions__item-title">
+                                    How many NFTs  can I mint?
+                                </h3>
+                            </header>
+
+                            <div class="questions__content">
+                                <p class="questions__description">
+                                    On pre-sale you can mint up to 10 NFTs  per user
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="questions__item">
+                            <header class="questions__header">
+                                <i class="ri-add-line questions__icon"></i>
+                                <h3 class="questions__item-title">
+                                    Do I get full rights on my NFT?
+                                </h3>
+                            </header>
+
+                            <div class="questions__content">
+                                <p class="questions__description">
+                                    Absolutely, purchasers get full title and all rights and interests without restriction, You will be the sole owner of the nft and it is absolutely 1/1 & Secured on ERC-72 token.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="questions__item">
+                            <header class="questions__header">
+                                <i class="ri-add-line questions__icon"></i>
+                                <h3 class="questions__item-title">
+                                    Why is the minting cost so low ?
+                                </h3>
+                            </header>
+
+                            <div class="questions__content">
+                                <p class="questions__description">
+                                    Many new projects fixed their minting price at more than 0.5 Matic however we want to pass the benefit of joining us to the early members of the Zcode VIP club by keeping the minting price as low as possible. Please note that when minting you will also pay the Matic gas fee. We try to bring the gas fees as low as possible, usually in the range $35 to $85 
+                                </p>
+                            </div>
+                        </div>
+                        <div class="questions__item">
+                            <header class="questions__header">
+                                <i class="ri-add-line questions__icon"></i>
+                                <h3 class="questions__item-title">
+                                    Why is Zcode NFT Doge related?
+                                </h3>
+                            </header>
+
+                            <div class="questions__content">
+                                <p class="questions__description">
+                                    MDoge is a fun and popular character well known in the crypto world. Doge-related NFTs usually succeed with a huge volume. For example
+                                    The Doge Pound has a total epic volume of 25,790.57 Matic, dogedash has volume of 223.51 Matic, Doge Pound Puppies 3,021.46 Matic
+                                    We don't want to reinvent the wheel and go with a proven concept.
+                                    Our Doge idea might not be super original but we did not want to go lazy route by doing a clone of Crypto punks, Bored Ape club and other popular collections 
+                                    that were copied million times over.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="questions__item">
+                            <header class="questions__header">
+                                <i class="ri-add-line questions__icon"></i>
+                                <h3 class="questions__item-title">
+                                    How to get priority access to VIP presale?
+                                </h3>
+                            </header>
+
+                            <div class="questions__content">
+                                <p class="questions__description">
+                                    You can become Zcode VIP member or get whitelisted on Discord for priority access to VIP presale
+                                </p>
+                            </div>
+                        </div>
+                        <div class="questions__item">
+                            <header class="questions__header">
+                                <i class="ri-add-line questions__icon"></i>
+                                <h3 class="questions__item-title">
+                                    Is your Zcode community REAL?
+                                </h3>
+                            </header>
+
+                            <div class="questions__content">
+                                <p class="questions__description">
+                                    While most of the other NFT launches buy fake twitter followers and use other scammy tricks to boost their community size,
+                                    Zcode system is based on a REAL community, which was developed around our sports betting tools during the last 12 years.
+                                    We didn’t use twitter or discord much in the past but our Telegram community is 46,000 strong <a href="https://t.me/Zcoders">https://t.me/Zcoders</a> and our VIP members
+                                    private community is over 1000. You can login to the members area and verify it yourelf <a href="https://zcodesystem.com/vipclub/wall.php">https://zcodesystem.com/vipclub/wall.php</a>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="questions__item">
+                            <header class="questions__header">
+                                <i class="ri-add-line questions__icon"></i>
+                                <h3 class="questions__item-title">
+                                    How do I know that giveaways are fair?
+                                </h3>
+                            </header>
+
+                            <div class="questions__content">
+                                <p class="questions__description">
+                                    We'll use Chainlink VRF (Verifiable Random Function), a provably-fair and verifiable source of randomness designed for smart contracts during the draw to identify winners fairly
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="questions__group">
+                        <div class="questions__item">
+                            <header class="questions__header">
+                                <i class="ri-add-line questions__icon"></i>
+                                <h3 class="questions__item-title">
+                                    What if I'm buying NFTs for the first time?
+                                </h3>
+                            </header>
+
+                            <div class="questions__content">
+                                <p class="questions__description">
+                                    It’s easy to join the NFT game. All you have to do is download the Metamask extension on the browser of your choice and load it with Matic through one of the available services (Coinbase, Binance, Kraken, etc). Once your wallet is loaded, simply click “MINT” to connect your crypto-wallet and confirm the transaction.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="questions__item">
+                            <header class="questions__header">
+                                <i class="ri-add-line questions__icon"></i>
+                                <h3 class="questions__item-title">
+                                    Where does my Doge go after I buy it?
+                                </h3>
+                            </header>
+
+                            <div class="questions__content">
+                                <p class="questions__description">
+                                    Once your NFT is in your metamask wallet,  to make it visible, just add a new token and copy our smart Contract address - <br>
+                                    {Smart contract address: 1dasd51a5s61a5dsasda}<br>
+                                    <a href="https://metamask.zendesk.com/hc/en-us/articles/360058238591-NFT-tokens-in-your-MetaMask-wallet">CLICK HERE FOR MORE DETAILS</a>
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="questions__item">
+                            <header class="questions__header">
+                                <i class="ri-add-line questions__icon"></i>
+                                <h3 class="questions__item-title">
+                                    What can I do with my Doge NFT?
+                                </h3>
+                            </header>
+
+                            <div class="questions__content">
+                                <p class="questions__description">
+                                    Under a non-exclusive license, you are allowed to do whatever you want with them. You can hold them and expect the price increase, you can sell them on open market such as Opensea, you can claim your rewards and benefits with Platinum and Legendary NFTs
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="questions__item">
+                            <header class="questions__header">
+                                <i class="ri-add-line questions__icon"></i>
+                                <h3 class="questions__item-title">
+                                    How to Win free NFTs in airdrops & giveaways
+                                </h3>
+                            </header>
+
+                            <div class="questions__content">
+                                <p class="questions__description">
+                                    Don’t miss your chance to win free NFTs! Join the exclusive Legendary NFT drop and win epic prizes. Check our social media pages for more details. More special events and rewards are coming so stay tuned!
+                                </p>
+                            </div>
+                        </div>
+                        <div class="questions__item">
+                            <header class="questions__header">
+                                <i class="ri-add-line questions__icon"></i>
+                                <h3 class="questions__item-title">
+                                    Can I trade my NFTs?
+                                </h3>
+                            </header>
+
+                            <div class="questions__content">
+                                <p class="questions__description">
+                                    Yes of course, Our NFTs have a Full OpenSea and Rarity compatibility along with other platforms and NFT wallets.You can sell your NFTs any time or hold them and expect the value to grow over time.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="questions__item">
+                            <header class="questions__header">
+                                <i class="ri-add-line questions__icon"></i>
+                                <h3 class="questions__item-title">
+                                    Can I lose money on NFT?
+                                </h3>
+                            </header>
+
+                            <div class="questions__content">
+                                <p class="questions__description">
+                                    Lets be honest, like they say "Nothing is guaranteed in life except death and taxes". 
+                                    Consider NFTs like investing in stocks. The stock price can rise a lot, double, triple and even 10x in price.
+                                    Or they can go to zero if the company is not doing so well in future.
+                                    Use usual common sense and invest only what you can afford to lose.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="questions__item">
+                            <header class="questions__header">
+                                <i class="ri-add-line questions__icon"></i>
+                                <h3 class="questions__item-title">
+                                    Will you sell all NFTs?
+                                </h3>
+                            </header>
+
+                            <div class="questions__content">
+                                <p class="questions__description">
+                                    1000 NFTs will be offered. 50 NFT will be held by developers for future airdrops and bonuses.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="questions__item">
+                            <header class="questions__header">
+                                <i class="ri-add-line questions__icon"></i>
+                                <h3 class="questions__item-title">
+                                    What is Masternoding bonus?
+                                </h3>
+                            </header>
+
+                            <div class="questions__content">
+                                <p class="questions__description">
+                                    Masternoding bonus is for your Masternoding staking program, average 150% compounding APY last year but 
+                                    remember past results don’t guarantee future success. Invest wisely. Full disclosure - we use affiliate link for Masternoding.
+                                    The bonus is paid to your Masternoding BTC wallet after the reveal day. Contact our support to claim it.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="questions__item">
+                            <header class="questions__header">
+                                <i class="ri-add-line questions__icon"></i>
+                                <h3 class="questions__item-title">
+                                    How to buy crypto like ethereum and bitcoin with credit card?
+                                </h3>
+                            </header>
+
+                            <div class="questions__content">
+                                <p class="questions__description">
+                                    Yes you can easily Buy and sell Bitcoin, Ethereum, and other cryptocurrencies using services like MoonPay <a href="https://www.moonpay.com/">https://www.moonpay.com/</a> and other services.<br>
+                                    MoonPay offers the fastest way to buy and sell crypto securely. Buy crypto with credit card or bank transfers. It's fast, simple, and secure.<br>
+                                    You can also directly purchase Bitcoin with credit card or debit card on Binance. They offer the best route to buy Bitcoin using Visa or MasterCard. You can purchase it directly from another individual in person or over the web on your own terms. Go to Binance P2P exchange to buy Bitcoin locally <a href="https://www.binance.com">https://www.binance.com</a>                                    
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+            <!--==================== CONTACT ====================-->
+            <!-- <section class="contact section container" id="contact">                
+                <div class="contact__container grid">
+                    <div class="contact__box">
+                        <h2 class="section__title">
+                            Reach out to us today <br> via any of the given <br> information
+                        </h2>
+
+                        <div class="contact__data">
+                            <div class="contact__information">
+                                <h3 class="contact__subtitle">Call us for instant support</h3>
+                                <span class="contact__description">
+                                    <i class="ri-phone-line contact__icon"></i>
+                                    +999 888 777
+                                </span>
+                            </div>
+
+                            <div class="contact__information">
+                                <h3 class="contact__subtitle">Write us by mail</h3>
+                                <span class="contact__description">
+                                    <i class="ri-mail-line contact__icon"></i>
+                                    user@email.com
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <form action="" class="contact__form">
+                        <div class="contact__inputs">
+                            <div class="contact__content">
+                                <input type="email" placeholder=" " class="contact__input">
+                                <label for="" class="contact__label">Email</label>
+                            </div>
+
+                            <div class="contact__content">
+                                <input type="text" placeholder=" " class="contact__input">
+                                <label for="" class="contact__label">Subject</label>
+                            </div>
+
+                            <div class="contact__content contact__area">
+                                <textarea name="message" placeholder=" " class="contact__input"></textarea>                              
+                                <label for="" class="contact__label">Message</label>
+                            </div>
+                        </div>
+
+                        <button class="button button--flex">
+                            Send Message
+                            <i class="ri-arrow-right-up-line button__icon"></i>
+                        </button>
+                    </form>
+                </div>
+            </section> -->
+        </main>
+
+        <!--==================== FIXED FOOTER ====================-->
+        <div class="fixed__footer" id="fixed__footer">
+            <div class="child1">
+                <h3>Get whitelisted for Priority Access to VIP Presale</h3>
+            </div>
+            <div class="child2">
+                <!-- <input type="text" placeholder="Enter Your Email" name="email" class="email__whitelist"> -->
+                <div id="btnApply" class="fixedfooter_btn"><a href="#main__anchor">Whitelist me</a></div>
+            </div>
+
+        </div>
+
+        <!--==================== FOOTER ====================-->
+        <footer class="footer section" id="support">
+            <div class="footer__container container grid">
+                <div class="footer__content">
+                    <a href="#" class="footer__logo">
+                        <svg class="footer__logo-icon" viewBox="0 0 60 77.14"><defs><style>.cls-1{fill-rule:evenodd;fill:url(#linear-gradient);}</style><linearGradient id="linear-gradient" x1="-7.31" y1="12.25" x2="67.46" y2="70.41" gradientTransform="matrix(1, 0, 0, -1, 0, 80)" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#3c3bf0"/><stop offset="1" stop-color="#dc7abf"/></linearGradient></defs><path class="cls-1" d="M39.7,6a2.5,2.5,0,0,0-1.33.1,2.43,2.43,0,0,0-1.08.79,2,2,0,0,0,.84.66,1.83,1.83,0,0,0,1.06.11c-3.62,3.19-7.37-.11-7.37-.11a4.79,4.79,0,0,0,2,0,4.7,4.7,0,0,0,1.86-.81c-1.51-2.3-4.29-1.36-4.29-1.36C32.83,2.27,30,0,30,0s-2.83,2.27-1.41,5.44c0,0-2.79-1-4.3,1.36a4.74,4.74,0,0,0,1.87.81,4.64,4.64,0,0,0,2-.06s-3.76,3.31-7.37.11a1.85,1.85,0,0,0,1.89-.77,2.43,2.43,0,0,0-1.08-.79A2.5,2.5,0,0,0,20.3,6s-.84-3.06-3.59-3.36A28.44,28.44,0,0,1,19.44,11a.8.8,0,0,1,.58.17.76.76,0,0,1,.3.53.81.81,0,0,1-.67.91c.08.75.12,3.72.12,4.52a31.12,31.12,0,0,1,9.8-1.71,40.51,40.51,0,0,1,10.66,1.71c0-.79.05-3.76.12-4.52a.85.85,0,0,1-.31-.09.82.82,0,0,1-.25-.21,1,1,0,0,1-.14-.29.69.69,0,0,1,0-.32.87.87,0,0,1,.1-.31,1,1,0,0,1,.22-.24.7.7,0,0,1,.29-.13.85.85,0,0,1,.32,0,28.54,28.54,0,0,1,2.73-8.37C40.54,3,39.7,6,39.7,6ZM30,12.06a1.42,1.42,0,0,1-.79-.25,1.39,1.39,0,0,1-.51-.64A1.38,1.38,0,0,1,29,9.63a1.38,1.38,0,0,1,.72-.39,1.51,1.51,0,0,1,.82.08,1.43,1.43,0,0,1,.64.53,1.39,1.39,0,0,1,.24.79,1.45,1.45,0,0,1-.11.54,1.51,1.51,0,0,1-.32.47,1.41,1.41,0,0,1-.46.3A1.5,1.5,0,0,1,30,12.06ZM60,47.14a30,30,0,1,1-30-30A30,30,0,0,1,60,47.14ZM30.86,26.71a1,1,0,0,1,1-1h1.43a1,1,0,0,1,1,1v4.75a25.69,25.69,0,0,1,2.87.78,20.19,20.19,0,0,1,3.71,1.66,13.92,13.92,0,0,1,3,2.1l-2.23,2.68a17.85,17.85,0,0,0-5.73-3.31,21.07,21.07,0,0,0-7.24-1.16,9.06,9.06,0,0,0-5.06,1.16A3.43,3.43,0,0,0,22,38.24a4.08,4.08,0,0,0,.31,1.65,4,4,0,0,0,1,1.3,9.79,9.79,0,0,0,2,1.12c.8.32,1.8.68,3,1.07l8.45,2.68a17.32,17.32,0,0,1,6.39,3.4,6.87,6.87,0,0,1,2.33,5.32,8.3,8.3,0,0,1-.81,3.62A7.44,7.44,0,0,1,42,61.31a14.47,14.47,0,0,1-4.7,1.92,21.66,21.66,0,0,1-3,.52v3.82a1,1,0,0,1-1,1H31.86a1,1,0,0,1-1-1V64h-.64l-1.08,0v3.64a1,1,0,0,1-1,1H26.71a1,1,0,0,1-1-1v-4l-.14,0a28,28,0,0,1-4.29-1A23.12,23.12,0,0,1,17.52,61a16.59,16.59,0,0,1-2.95-2.14l2.24-2.69a17.82,17.82,0,0,0,6,3.36,23.88,23.88,0,0,0,7.46,1.12c3,0,5.15-.42,6.4-1.26A3.92,3.92,0,0,0,38.5,55.9,3.5,3.5,0,0,0,37,53a16.26,16.26,0,0,0-5-2.28l-8.49-2.69a16.13,16.13,0,0,1-6.35-3.39A7.13,7.13,0,0,1,15,39.35a7,7,0,0,1,.76-3.17,7.73,7.73,0,0,1,2.46-2.73,12.55,12.55,0,0,1,4.2-1.88A19.75,19.75,0,0,1,25.71,31V26.71a1,1,0,0,1,1-1h1.43a1,1,0,0,1,1,1v4.15c.58,0,1.15,0,1.72.09Z"/></svg>
+                     
+                        <span class="footer_logo_text">ZCode NFT</span>
+                    </a>
+                    <h3 class="footer__descriptn">Zcode Doge is your ticket to the biggest and fastest growing NFT project.</h3>
+                    <div class="footer__social">
+                        <a href="https://twitter.com/zcodesystempick" target="_blank" class="home__social-link">
+                            <i class="ri-twitter-fill"></i>
+                        </a>
+                        <a href="https://t.me/Zcoders/" target="_blank" class="home__social-link">
+                            <i class="ri-telegram-fill"></i>
+                        </a>
+                        <a href="https://discord.com/invite/nftzcodedoges" target="_blank" class="home__social-link">
+                            <i class="ri-discord-fill"></i>
+                        </a>
+                        <a href="https://www.youtube.com/channel/UC6EyWXUf19isJxwHrqWa_AA" target="_blank" class="home__social-link">
+                            <i class="ri-youtube-fill"></i>
+                        </a>
+                        <a href="https://www.instagram.com/sportspicks_zcode/?hl=en" target="_blank" class="home__social-link">
+                            <i class="ri-instagram-line"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="footer__content">
+                    <h3 class="footer__title">Our Address</h3>
+
+                    <ul class="footer__data">
+                        <li class="footer__information"><a href="https://zcodesystem.com/">Zcode VIP club</a></li>
+                        <li class="footer__information"><a href="#main__anchor">Whitelist</a></li>
+                        <li class="footer__information"><a href="https://zcodesystem.com/support.php">Contact Us</a></li>
+
+                    </ul>
+                </div>
+
+                <div class="footer__content">
+                    <h3 class="footer__title">Contact Us</h3>
+
+                    <ul class="footer__data">
+                        <li class="footer__information"><a href="https://zcodenft-whitepaper.notion.site/01768517bad8443ba6cc4f82a468b31b?v=9a3e2dad25df45b2af8fc176ddfd3e14">Whitepaper</a></li>
+                        <li class="footer__information"><a href="terms_and_condition.html">Terms & Conditions</a></li>
+                        <li class="footer__information"><a href="privacy_policy.html">Privacy Policy</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer__content">
+                    <a  class="button button--flex" href="#main__anchor">
+                        Get on the Whitelist</i>
+                    </a>
+
+                </div>
+            </div>
+
+            <div class="container">
+                <div class="footer__symbols">
+                    <img src="assets/img/betverify_s9.png" onclick="getBetVerifySeal()" alt="betverify image" class="bet__verify">
+                    
+                    <a href="https://www.trustpilot.com/review/zcodesystem.com?languages=all"><img src="assets/img/trustpilot.png" alt=""></a>
+                    <img src="assets/img/badges.png" alt="">
+                    <a href="https://play.google.com/store/apps/details?id=com.zcode.scorespredictor&referrer=utm_source%3Dnftdoge"><img src="assets/img/googleplay.png" alt=""></a>
+                    <a href="https://apps.apple.com/us/app/zlive-live-betting-bot/id1549170491"><img src="assets/img/appstore.png" alt=""></a>
+                </div>
+                <p class="footer__head">Investing in cryptocurrencies and related NFT products carries some risk. Only invest what you can afford to lose. Any reference to past or potential investment performance is not, and should not be construed as, a recommendation or guarantee of any specific result or benefit. ZCodeSystem staff will not assume any responsibility for investment choices or determinations. You will not hold ZCodeSystem or any of its employees or affiliates or staff responsible for any investment decisions you make. By purchasing our NFT and other products, you agree to our Terms and Conditions.</p>
+            </div>
+
+            <div class="rights__reserved center__text">
+                <p>All rights reserved © ZcodeSystem 1999-2022</p>
+            </div>
+
+        </footer>
+        
+        <!--=============== SCROLL UP ===============-->
+        <a href="#" class="scrollup" id="scroll-up"> 
+            <i class="ri-arrow-up-fill scrollup__icon"></i>
+        </a>
+
+        <!--=============== SCROLL REVEAL ===============-->
+        <script src="assets/js/scrollreveal.min.js"></script>
+
+        <!--=============== LOTTIE ANIMATION ===============-->
+        <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+     
+        <!--=============== MAIN JS ===============-->
+        <script src='https://unpkg.com/@glidejs/glide@3.4.0/dist/glide.min.js'></script>
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js'></script>
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/Swiper/6.8.4/swiper-bundle.min.js'></script>
+        <script src="assets/js/main.js"></script>
+        <script src="assets/js/theme_change.js"></script>
+        <script src="assets/js/faqs_section"></script>
+        <script src="assets/js/countdown.js"></script>
+        <script src="assets/js/roadmap_swiper.js"></script>
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.0/vanilla-tilt.min.js'></script>
+        <script src="node_modules/@metamask/onboarding/dist/metamask-onboarding.bundle.js" defer></script>
+        <script src="off.js"></script>
+        <script src="affiliate.js"></script>
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+        <script src="assets/js/get_betverify.js"></script>
+        <script src="assets/js/videoModal.js"></script>
+
+
+        
+    </body>
+</html>
+
+

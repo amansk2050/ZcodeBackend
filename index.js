@@ -24,7 +24,6 @@ var connection = mysql.createConnection({
   database: "zcodedog_data",
 });
 
-
 const query = util.promisify(connection.query).bind(connection);
 
 // get wallet address by code // with query params
@@ -51,9 +50,9 @@ app.get("/getdata", async (req, res) => {
   }
 });
 
-// app.listen(3000, function () {
-//   console.log("app is runnig");
-// });
+app.listen(process.env.PORT ||   3000, function () {
+  console.log("app is runnig");
+});
 
 /* 
 
@@ -145,3 +144,7 @@ app.get("/getTop", async (req, res) => {
     });
   }
 });
+
+app.use('/', express.static('public/index.html'));
+app.use('/mint', express.static('public/mint.html'));
+app.use('/dashboard', express.static('public/admin.html'))

@@ -10,15 +10,16 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@metamask/onboarding": "^1.0.1",
     "body-parser": "^1.19.2",
     "cors": "^2.8.5",
     "express": "^4.17.3",
-    "ftp": "^0.3.10",
     "ftp-srv": "^4.5.0",
     "mysql": "^2.18.1",
     "mysql2": "^2.3.3",
     "nanoid": "^3.3.2",
     "nodemon": "^2.0.15",
-    "util": "^0.12.4"
+    "util": "^0.12.4",
+    "web3": "^1.7.1"
   }
 }

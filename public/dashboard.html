@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zcode Dashboard</title>
+
+  <!--=============== FAVICON ===============-->
+    <link rel="shortcut icon" href="#" type="image/x-icon">
+
+  <!--=============== Style sheets ===============-->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/dashboard-style.css">
+
+</head>
+<body>
+
+<div class="grid-container">
+   <div class="menu-icon">
+    <i class="fas fa-bars header__menu"></i>
+  </div>
+   
+  <header class="header">
+    <div class="header__search">NFT Contract Manager</div>
+  </header>
+
+  <aside class="sidenav">
+    <div class="sidenav__close-icon">
+      <i class="fas fa-times sidenav__brand-close"></i>
+    </div>
+    <ul class="sidenav__list fixed__header">
+      <a href="https://lanfrica.com"><img src="assets/img/main--logo.svg" class="main__logo" alt="Main Logo"></a>
+      <li class="sidenav__list-item"> <i class="ri-send-plane-2-fill sidenav__icon"></i> <a href="#aairdrops">Airdrops</a></li>
+      <li class="sidenav__list-item"> <i class="ri-reserved-line sidenav__icon"></i> <a href="#aadjustreserves">Adjust Reserves</a></li>
+      <li class="sidenav__list-item"> <i class="ri-price-tag-3-fill sidenav__icon"></i> <a href="#aadjustbaseprices">Adjust Base Prices</a></li>
+      <li class="sidenav__list-item"> <i class="ri-toggle-fill sidenav__icon"></i> <a href="#mmintactivation">Mint Activation</a></li>
+      <li class="sidenav__list-item"> <i class="ri-close-circle-fill sidenav__icon"></i><a href="">Logout</a></li>
+    </ul>
+  </aside>
+
+  <main class="main">
+    <div class="main-header">
+      <div class="main-header__heading">
+        <b>Your Address:</b> <span id="myAddress">0x0-988761238476198723648917867814</span><br>
+        <!-- <b>Active Chain:</b> <span id="activeChain">1</span><br> -->
+        <b>Contract At:</b> <span id="contractAddress">0x0-98876123234234238917867814</span><br>
+      </div>
+    </div>
+
+    <div class="main-overview">
+      <div class="overviewcard__center">
+        <div class="overviewcard__icon"><h2 id="ooverview">Admin View</h2></div>
+      </div>  
+    </div>
+    
+    <div class="main-overview">
+      <div class="overviewcard">
+        <div class="overviewcard__icon">
+          <b>Max Supply:</b> <span id="maxSupply">3150</span><br>
+          <b>Max Mint</b> <span id="maxMint">10</span><br>
+          <b>Total Minted:</b> <span id="totalMinted">111</span><br>
+          <b>Visibility:</b> <span id="visibility">True</span><br>
+          <b>Total Categories:</b> <span id="totalCategories">03</span><br>
+          <b>Total Gold Minted:</b> <span id="totalGoldminted">10</span><br>
+          <b>Total Platinum Minted:</b> <span id="totalPlatinumminted">10</span><br>
+          <b>Total Lagendary Minted:</b> <span id="totalLegendaryminted">10</span><br>
+
+        </div>
+        <div class="overviewcard__info"><i class="ri-restart-fill reload__icon"></i></div>
+      </div>
+
+      <div class="overviewcard">
+        <div class="overviewcard__icon">
+          <div class="flexx">
+            <div><b>Current Price:</b></div>
+            <div>
+              <div class="form-group">
+                <input type="number" name="name" id="currentPrice" class="form-address" placeholder="Amount" required />
+                <button class="button button--flex" onclick="showValue()">
+                  Submit
+                </button><div id="ans" style="font-weight: 600;"></div>
+              </div>
+            </div>
+          </div>
+          <div class="flexx">
+            <div><b>Available Token:</b></div>
+            <div>
+              <div class="form-group">
+                <input type="number" name="name" id="availableToken" class="form-address" placeholder="Amount" required />
+                <button class="button button--flex" onclick="showValue1()">
+                  Submit
+                </button><div id="ans1" style="font-weight: 600;"></div>
+              </div>
+            </div>
+          </div>
+          <div class="flexx">
+            <div><b>Owners Available Token:</b></div>
+            <div>
+              <div class="form-group">
+                <input type="number" name="name" id="ownersToken" class="form-address" placeholder="Amount" required />
+                <button class="button button--flex" onclick="showValue2()">
+                  Submit
+                </button><div id="ans2" style="font-weight: 600;"></div>
+              </div>
+            </div>
+          </div>
+          <div class="flexx">
+            <div><b>Whitelisted Address:</b></div>
+            <div>
+              <div class="form-group">
+                <input type="name" name="name" id="whitelistedAddress" class="form-address" placeholder="Address" required />
+                <button class="button button--flex" onclick="showValue3()">
+                  Submit
+                </button><div id="ans3" style="font-weight: 600;"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="main-overview">
+      <!-- airdrops section -->
+      <div class="card">
+        <div id="aairdrops">
+          <h2 class="title">Admin Set</h2><br>
+
+          <div class="flexx">
+            <div><b>setmaxMint:</b></div>
+            <div>
+              <div class="form-group">
+                <input type="name" name="name" id="Testt" class="form-address" placeholder="Address" required />
+                <button class="button button--flex" onclick="showUpdated1()">
+                  Submit
+                </button><div id="update1" style="font-weight: 600;"></div>
+              </div>
+            </div>
+          </div>
+          <div class="flexx">
+            <div><b>setDefaultBaseUri:</b></div>
+            <div>
+              <div class="form-group">
+                <input type="number" name="name" id="Testt" class="form-address" placeholder="Address" required />
+                <button class="button button--flex" onclick="showUpdated2()">
+                  Submit
+                </button><div id="update2" style="font-weight: 600;"></div>
+              </div>
+            </div>
+          </div>
+          <div class="flexx">
+            <div><b>setVisibility:</b></div>
+            <div>
+              <div class="onoffswitch">
+                <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch" checked>
+                <label class="onoffswitch-label" for="myonoffswitch">
+                  <span class="onoffswitch-inner"></span>
+                  <span class="onoffswitch-switch"></span>
+                </label>
+              </div>
+            </div>
+          </div>
+          <div class="flexx">
+            <div><b>updateStage:</b></div>
+            <div>
+              <div class="form-group">
+                <input type="number" name="name" id="Testt" class="form-address" placeholder="Address" required />
+                <button class="button button--flex" onclick="showUpdated3()">
+                  Submit
+                </button><div id="update3" style="font-weight: 600;"></div>
+              </div>
+            </div>
+          </div>
+          <div class="flexx">
+            <div><b>updatePrice:</b></div>
+            <div>
+              <div class="form-group">
+                <input type="number" name="name" id="Testt" class="form-address" placeholder="Address" required />
+                <button class="button button--flex" onclick="showUpdated4()">
+                  Submit
+                </button><div id="update4" style="font-weight: 600;"></div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="card">
+        <h2 class="title">Admin Perform</h2>
+        <div class="flexx">
+          <div><b>Whitelist:</b></div>
+          <div>
+            <div class="form-group">
+              <input type="name" name="name" id="Testt" class="form-address" placeholder="use to comma separate" required />
+              <button class="button button--flex" onclick="showUpdated5()">
+                Submit
+              </button><div id="update5" style="font-weight: 600;"></div>
+            </div>
+          </div>
+        </div>
+        <div class="flexx">
+          <div><b>Blacklist:</b></div>
+          <div>
+            <div class="form-group">
+              <input type="name" name="name" id="Testt" class="form-address" placeholder="use to comma separate" required />
+              <button class="button button--flex" onclick="showUpdated6()">
+                Submit
+              </button><div id="update6" style="font-weight: 600;"></div>
+            </div>
+          </div>
+        </div>
+        <div class="flexx">
+          <div><b>BuyTokenForOwner:</b></div>
+          <div>
+            <div class="form-group">
+              <input type="name" name="name" id="Testt" class="form-address" placeholder="Address" required />
+              <button class="button button--flex" onclick="showUpdated8()">
+                Submit
+              </button><div id="update8" style="font-weight: 600;"></div>
+            </div>
+          </div>
+        </div>
+
+
+        <h2 class="title" id="mmintactivation">Mint Activation</h2><br>
+        <label class="switch">
+          <input type="checkbox">
+          <span class="slider round"></span>
+        </label>
+      </div>
+    </div>
+
+    <div class="main-overview">
+      <div class="overviewcard">
+        <div class="overviewcard__icon">
+          <div class="flexx">
+            <h2 id="fflexx">Financials</h2><i class="ri-restart-fill reload__icon"></i><br>
+          </div>
+          Your contract balance is: <b>0.0 ETH</b> <br>
+          Personal balance is <b>0.23452345 ETH</b><br>
+          <button class="button button--flex">
+            Withdraw Funds
+          </button>
+        </div>
+      </div>  
+    </div>
+
+  </main>
+
+  <footer class="footer">
+    <div class="footer__copyright">&copy; 2022 Zcode</div>
+    <div class="footer__signature">All rights reserved</div>
+  </footer>
+</div>
+<!-- JScripts -->
+  <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+  <script  src="assets/js/dashboard-script.js"></script>
+
+</body>
+</html>

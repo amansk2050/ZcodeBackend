@@ -4,3 +4,9 @@ var connection = mysql.createConnection({
   password: "%XjCy]SZCzLQ",
   database: "zcodedog_data",
 });
+
+---
+
+https://www.digitalocean.com/community/tutorials/nodejs-serving-static-files-in-express
+
+for srving static files
