@@ -145,6 +145,6 @@ app.get("/getTop", async (req, res) => {
   }
 });
 
-app.use('/', express.static('public/index.html'));
+app.use('/', express.static('public'));
 app.use('/mint', express.static('public/mint.html'));
-app.use('/dashboard', express.static('public/admin.html'))
+app.use('/admin', express.static('public/admin.html'))
