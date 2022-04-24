@@ -1,4 +1,4 @@
-var baseURL = "http://localhost:3000/";
+var baseURL = "https://zcode.dog/";
 const connectWallet = document.getElementById("connect__wallet");
 
 //-- if connected ---

@@ -8,7 +8,7 @@ ethereumButton.addEventListener("click", async () => {
 });
 
 // market place address --
-var contractAddressMarket = "0x233333E977bC6bA51133De901630aef4a4E25710";
+var contractAddressMarket = "0xF62679eA3cE6625D5e86B45A630245a142E7ACE7";
 // market place abi ---
 
 var contractAbiMarket = [
@@ -582,7 +582,7 @@ var contractAbiMarket = [
   },
 ];
 
-var baseURL = "http://localhost:3000/";
+var baseURL = "https://zcode.dog/";
 // --- function to connecting wallet ---
 
 async function connectingWallet() {
@@ -679,7 +679,7 @@ async function buyNFT() {
   }
   if (a.checked == true) {
     console.log("You are buying Gold NFT");
-    // await buyGold(account, extractCode);
+    await buyGold(account, extractCode);
     console.log("Gold minted ");
   } else if (b.checked == true) {
     console.log("You are buying Platinum NFT");

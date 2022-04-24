@@ -1,9 +1,10 @@
+var baseURL = "https://zcode.dog/";
 document.addEventListener("DOMContentLoaded", async function () {
   await load();
   const account = await getAccounts();
   const getAd = await getAdmin()
   if(account !== getAd){
-  window.location.href = "http://localhost:3000/admin.html";
+  window.location.href = `${baseURL}admin.html`;
   }
   else {
     // onload function and set those values.
@@ -22,7 +23,7 @@ document.addEventListener("DOMContentLoaded", async function () {
   }
 });
 // market place address --
-var contractAddressMarket = "0x233333E977bC6bA51133De901630aef4a4E25710";
+var contractAddressMarket = "0xF62679eA3cE6625D5e86B45A630245a142E7ACE7";
 // market place abi ---
 
 var contractAbiMarket = [

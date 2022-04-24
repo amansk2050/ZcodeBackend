@@ -8,31 +8,37 @@ app.use(cors());
 app.use(bodyParser.json());
 
 // MYSQL details
-console.log("hello aman");
-// var connection = mysql.createConnection({
+// var connection = mysql.createPool({
 //   host: "localhost",
 //   user: "root",
 //   password: "Final@2050",
 //   database: "affilicate_code",
 // });
+process.on('uncaughtException', function (err) {
+  console.log(err);
+});
 
 //-- for production --
-var connection = mysql.createConnection({
-  host: "localhost",
+var connection = mysql.createPool({
   user: "zcodedog_db_user",
   password: "%XjCy]SZCzLQ",
   database: "zcodedog_data",
+  socketPath: '/var/lib/mysql/mysql.sock'
 });
 
 const query = util.promisify(connection.query).bind(connection);
 
-// get wallet address by code // with query params
-// request url - http://localhost:3000/getdata
+const connect = util.promisify( connection.getConnection ).bind( connection );
+
+app.listen(3000);
+
 app.get("/getdata", async (req, res) => {
+  const client = await connect();
   try {
+    const cod = connection.escape(req.query.code);
     console.log("hello :: ", req.query.code);
     const code = await query(
-      `select address from affiliate where id = '${req.query.code}';`
+      `select address from affiliate where id = ${cod};`
     );
     var data = JSON.stringify(code);
     var data1 = JSON.parse(data);
@@ -48,11 +54,12 @@ app.get("/getdata", async (req, res) => {
       code: error,
     });
   }
+  finally{
+    client.release();
+  }
 });
 
-app.listen(process.env.PORT ||   3000, function () {
-  console.log("app is runnig");
-});
+
 
 /* 
 
@@ -69,18 +76,20 @@ ALTER TABLE affiliate ADD COLUMN id INT AUTO_INCREMENT PRIMARY KEY,
 
 app.post("/generate", async (req, res) => {
   console.log("inside generate ");
-  try {
+  const client = await connect();
+  try {  
+    const add = connection.escape(req.body.address);
     const code = await query(
-      `select id from affiliate where address = '${req.body.address}';`
+      `select id from affiliate where address = ${add};`
     );
     var data = JSON.stringify(code);
     var data1 = JSON.parse(data);
     if (code.length == 0) {
       const insert = await query(
-        `insert into affiliate (address) values('${req.body.address}');`
+        `insert into affiliate (address) values(${add});`
       );
       const getId = await query(
-        `select id from affiliate where address = '${req.body.address}';`
+        `select id from affiliate where address = ${add};`
       );
       var data2 = JSON.stringify(getId);
       var data3 = JSON.parse(data2);
@@ -101,13 +110,18 @@ app.post("/generate", async (req, res) => {
       code: error,
     });
   }
+  finally{
+    client.release();
+  }
 });
 
 //-- count increment --
 
 app.post("/countIncrement", async (req, res) => {
+  const client = await connect();
   try {
-    const insert = `UPDATE affiliate SET nft_minted = nft_minted + 1 where address = '${req.body.address}';`;
+    const addr = connection.escape(req.body.address);
+    const insert = `UPDATE affiliate SET nft_minted = nft_minted + 1 where address = ${addr};`;
     console.log("query :: ", insert);
     await query(insert);
     res.status(200).json({
@@ -119,15 +133,20 @@ app.post("/countIncrement", async (req, res) => {
       code: error,
     });
   }
+  finally{
+    client.release();
+  }
 });
 
 //--get top most ---
 app.get("/getTop", async (req, res) => {
+  const client = await connect();
   try {
+    const pag = connection.escape(req.query.page);
     console.log("hello");
     const code = await query(
       `select *  from affiliate offset order by nft_minted desc limit 10 offset ${
-        (req.query.page - 1) * 10
+        (pag - 1) * 10
       };`
     );
     var data = JSON.stringify(code);
@@ -142,6 +161,9 @@ app.get("/getTop", async (req, res) => {
       message: "error",
       code: error,
     });
+  }
+  finally{
+    client.release();
   }
 });
 
