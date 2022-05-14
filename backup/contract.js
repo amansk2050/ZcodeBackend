@@ -1,5 +1,5 @@
 const ethereumButton = document.getElementById("connectButton");
-const popText = document.getElementById("popText");
+
 // --eventListner for connecting wallet --
 ethereumButton.addEventListener("click", async () => {
   console.log("connecting wallet");
@@ -650,22 +650,15 @@ async function getAccounts() {
 
 // -- buy nft---
 async function buyNFT() {
-  let transaction;
   console.log("inside buy nft");
 
   //-- set code---
   let link = window.location.href;
 
-
   const affiliateCode = link.substring(link.indexOf("#") + 2);
   if (affiliateCode.length != 0 && link.indexOf("#") > 0) {
     console.log("affiliateCode :: ", affiliateCode);
-    let code = await getCookie("affiliateCode");
-    console.log("before :: ", code);
-    if(code.length == 0){
-      await setCookie("affiliateCode", affiliateCode, 30);
-    }
-    
+    await setCookie("affiliateCode", affiliateCode, 30);
   }
   //----
   var a = document.getElementById("radio1");
@@ -686,32 +679,20 @@ async function buyNFT() {
   }
   if (a.checked == true) {
     console.log("You are buying Gold NFT");
-    popText.textContent = "Minting .. ";
-    popText.classList.remove("display__none");
-    transaction =  await buyGold(account, extractCode);
+    await buyGold(account, extractCode);
     console.log("Gold minted ");
   } else if (b.checked == true) {
     console.log("You are buying Platinum NFT");
-    popText.textContent = "Minting .. ";
-    popText.classList.remove("display__none");
-    transaction =   await buyPlatinum(account, extractCode);
+    await buyPlatinum(account, extractCode);
     console.log("Platinum minted ");
   } else {
     console.log("Your are buying Legendary NFT");
-    popText.textContent = "Minting .. ";
-    popText.classList.remove("display__none");
-    transaction =  await buyLegendary(account, extractCode);
+    await buyLegendary(account, extractCode);
     console.log("Legendary minted ");
   }
-  if(extractCode != 0) {
-    let addr_ = await fundsTransfer(extractCode);
-    console.log("funds transfer done ");
-  }
-  popText.href = `https://rinkeby.etherscan.io/tx/${transaction.transactionHash}`;
-  popText.textContent = "Transaction Hash"
-  // popText.classList.remove("display__none");
+  let addr_ = await fundsTransfer(extractCode);
+  console.log("funds transfer done ");
   // await incrementAffiliateCount(addr_);
-  // popText.textContent = "Transaction Hash";
 }
 
 //--- buy for gold --
@@ -728,12 +709,10 @@ async function buyGold(account, code) {
     from: account,
     value: `${val}`,
   };
-  let transaction = await contract.methods
+  const transaction = await contract.methods
     .buyToken(0, counter, code)
     .send(params);
   console.log("transaction :: ", transaction);
-  return transaction;
-  
 }
 
 //--- buy for platinum --

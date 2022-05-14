@@ -56,7 +56,7 @@ async function getRefferalLink(account) {
   };
 
   const res = await axios.post(`${baseURL}generate`, params);
-  let link = `http://zcode.dog/#/${res.data.code}`;
+  let link = `https://zcode.dog/#/${res.data.code}`;
   console.log("link :: ", link);
   //-- replace input text value
   var placeholder = document.getElementById("myText1");
@@ -70,6 +70,7 @@ async function getRefferalLink(account) {
 async function copyLink() {
   console.log("inside copy link");
   var copyText = document.getElementById("myText1");
+  console.log("copytext :: ", copyText);
   copyText.select();
   navigator.clipboard.writeText(copyText.placeholder);
 }
