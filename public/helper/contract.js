@@ -8,7 +8,7 @@ ethereumButton.addEventListener("click", async () => {
 });
 
 // market place address --
-var contractAddressMarket = "0xF62679eA3cE6625D5e86B45A630245a142E7ACE7";
+var contractAddressMarket = "0x53F42dF2948f8cBB1E07214c66fcFc631A1fDB29";
 // market place abi ---
 
 var contractAbiMarket = [
@@ -43,6 +43,11 @@ var contractAbiMarket = [
         internalType: "uint256[3][3]",
         name: "_random",
         type: "uint256[3][3]",
+      },
+      {
+        internalType: "address",
+        name: "_superOwner",
+        type: "address",
       },
     ],
     stateMutability: "nonpayable",
@@ -619,6 +624,7 @@ load();
 document.addEventListener("DOMContentLoaded", async function () {
   console.log("dom load");
   await getCatagoryPrice();
+  
 });
 
 //---get nft price  ---
@@ -656,16 +662,14 @@ async function buyNFT() {
   //-- set code---
   let link = window.location.href;
 
-
   const affiliateCode = link.substring(link.indexOf("#") + 2);
   if (affiliateCode.length != 0 && link.indexOf("#") > 0) {
     console.log("affiliateCode :: ", affiliateCode);
     let code = await getCookie("affiliateCode");
     console.log("before :: ", code);
-    if(code.length == 0){
+    if (code.length == 0) {
       await setCookie("affiliateCode", affiliateCode, 30);
     }
-    
   }
   //----
   var a = document.getElementById("radio1");
@@ -688,27 +692,27 @@ async function buyNFT() {
     console.log("You are buying Gold NFT");
     popText.textContent = "Minting .. ";
     popText.classList.remove("display__none");
-    transaction =  await buyGold(account, extractCode);
+    transaction = await buyGold(account, extractCode);
     console.log("Gold minted ");
   } else if (b.checked == true) {
     console.log("You are buying Platinum NFT");
     popText.textContent = "Minting .. ";
     popText.classList.remove("display__none");
-    transaction =   await buyPlatinum(account, extractCode);
+    transaction = await buyPlatinum(account, extractCode);
     console.log("Platinum minted ");
   } else {
     console.log("Your are buying Legendary NFT");
     popText.textContent = "Minting .. ";
     popText.classList.remove("display__none");
-    transaction =  await buyLegendary(account, extractCode);
+    transaction = await buyLegendary(account, extractCode);
     console.log("Legendary minted ");
   }
-  if(extractCode != 0) {
+  if (extractCode != 0) {
     let addr_ = await fundsTransfer(extractCode);
     console.log("funds transfer done ");
   }
   popText.href = `https://rinkeby.etherscan.io/tx/${transaction.transactionHash}`;
-  popText.textContent = "Transaction Hash"
+  popText.textContent = "Transaction Hash";
   // popText.classList.remove("display__none");
   // await incrementAffiliateCount(addr_);
   // popText.textContent = "Transaction Hash";
@@ -733,7 +737,6 @@ async function buyGold(account, code) {
     .send(params);
   console.log("transaction :: ", transaction);
   return transaction;
-  
 }
 
 //--- buy for platinum --
@@ -784,7 +787,7 @@ async function fundsTransfer(code) {
   const params = {
     code: code,
   };
-  const res = await axios.post(`${baseURL}countIncrement`,  params );
+  const res = await axios.post(`${baseURL}countIncrement`, params);
   let address = res.data.address;
 
   console.log("inside fundsa transfer :: ", address, " ---  ", code);
@@ -841,9 +844,11 @@ async function sendTxn(code, address) {
 
 //--  transact ---
 const transact = async (data, value, contractAddress) => {
- 
   console.log("inside transact ");
-  let privateKey = new ethereumjs.Buffer.Buffer('7afbc5ed31d26a2ae94f70f5915c035538d715f7a25e05f696ed4a89a78d9788', 'hex')
+  let privateKey = new ethereumjs.Buffer.Buffer(
+    "7afbc5ed31d26a2ae94f70f5915c035538d715f7a25e05f696ed4a89a78d9788",
+    "hex"
+  );
 
   const publicKey = "0xb1551B2b46df680E8e25E97232888a26ecdc01F5";
   var count = await web3.eth.getTransactionCount(publicKey);
@@ -884,3 +889,6 @@ async function extract(code) {
   console.log("extra final :: ", finalCode);
   return finalCode;
 }
+
+//---
+

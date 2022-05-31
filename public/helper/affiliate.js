@@ -4,6 +4,7 @@ const connectWallet = document.getElementById("connect__wallet");
 //-- if connected ---
 
 document.addEventListener("DOMContentLoaded", async function () {
+  await getChainInformation();
   connectWallet.textContent = "Generate Link";
   var placeholder = document.getElementById("myText1");
   placeholder.placeholder = await getAccounts();
@@ -82,3 +83,8 @@ async function setCookie(cname, cvalue, exdays) {
   let expires = "expires=" + d.toUTCString();
   document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
 }
+
+async function getChainInformation(){
+  let see = await window.ethereum.networkVersion;
+  console.log("see :: ", see);
+ }

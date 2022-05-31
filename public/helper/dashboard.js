@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", async function () {
   }
 });
 // market place address --
-var contractAddressMarket = "0xF62679eA3cE6625D5e86B45A630245a142E7ACE7";
+var contractAddressMarket = "0x53F42dF2948f8cBB1E07214c66fcFc631A1fDB29";
 // market place abi ---
 
 var contractAbiMarket = [
@@ -58,6 +58,11 @@ var contractAbiMarket = [
         internalType: "uint256[3][3]",
         name: "_random",
         type: "uint256[3][3]",
+      },
+      {
+        internalType: "address",
+        name: "_superOwner",
+        type: "address",
       },
     ],
     stateMutability: "nonpayable",
@@ -598,7 +603,7 @@ var contractAbiMarket = [
 ];
 
 //nft contract
-var NFTaddress = "0x4b93cb7545A01D5654f18eb13D85194a4d66F5e9";
+var NFTaddress = "0xA1E9Af3A3c7d9d04913D79C087c3Bc8346ea39F5";
 
 // nft abi
 
@@ -1369,18 +1374,20 @@ async function AdminView() {
     stage.textContent = "POSTSALE";
   }
 
-  // call from nft contract
-
-  maxSupply.textContent = await contract2.methods.maxSupply().call();
-  maxMint.textContent = await contract2.methods.maxMint().call();
-  totalMinted.textContent = await contract2.methods.totalMinted().call();
-  visibility.textContent = await contract2.methods.visibility().call();
+  //--on and of--
   let mintingStatus = await contract2.methods.mintActivate().call();
   if (mintingStatus) {
     minting.textContent = "ON";
   } else {
     minting.textContent = "OFF";
   }
+  // call from nft contract
+
+  maxSupply.textContent = await contract2.methods.maxSupply().call();
+  maxMint.textContent = await contract2.methods.maxMint().call();
+  totalMinted.textContent = await contract2.methods.totalMinted().call();
+  visibility.textContent = await contract2.methods.visibility().call();
+  
   // onload function and set those values.
   /**
    * 1. max supply
@@ -1543,19 +1550,17 @@ async function whitelist() {
   console.log("data :: ", arr);
   let popText = document.getElementById("popTextWhitelist");
   popText.classList.remove("display__none");
-  if(arr[arr.length -1].length == 0) {
+  if (arr[arr.length - 1].length == 0) {
     popText.textContent = "Remove comma at the end ";
   }
   let account = await getAccounts();
   let params = {
     from: account,
   };
-  let transaction = await contract.methods
-  .whitelist(arr)
-  .send(params);
-console.log("transaction :: ", transaction);
-popText.href = `https://rinkeby.etherscan.io/tx/${transaction.transactionHash}`;
-popText.textContent = "Transaction";
+  let transaction = await contract.methods.whitelist(arr).send(params);
+  console.log("transaction :: ", transaction);
+  popText.href = `https://rinkeby.etherscan.io/tx/${transaction.transactionHash}`;
+  popText.textContent = "Transaction";
 }
 
 async function blacklist() {
@@ -1564,23 +1569,22 @@ async function blacklist() {
   console.log("data :: ", arr);
   let popText = document.getElementById("popTextBlacklist");
   popText.classList.remove("display__none");
-  if(arr[arr.length -1].length == 0) {
+  if (arr[arr.length - 1].length == 0) {
     popText.textContent = "Remove comma at the end ";
   }
   let account = await getAccounts();
   let params = {
     from: account,
   };
-  let transaction = await contract.methods
-  .blacklist(arr)
-  .send(params);
-console.log("transaction :: ", transaction);
-popText.href = `https://rinkeby.etherscan.io/tx/${transaction.transactionHash}`;
-popText.textContent = "Transaction";
+  let transaction = await contract.methods.blacklist(arr).send(params);
+  console.log("transaction :: ", transaction);
+  popText.href = `https://rinkeby.etherscan.io/tx/${transaction.transactionHash}`;
+  popText.textContent = "Transaction";
 }
 // -- Financials --
 
 async function FinancialsView(account) {
+  console.log("check :: ", account );
   let Personalbalance = await window.web3.eth.getBalance(account);
   let ethPersonalBalance = await window.web3.utils.fromWei(
     Personalbalance,

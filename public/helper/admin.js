@@ -2,7 +2,7 @@ const connectWallet = document.getElementById("connectButton");
 const message = document.getElementById("getAccountsResult");
 var baseURL = "https://zcode.dog/";
 const contractDetails = {
-  contractAddressMarket: "0xF62679eA3cE6625D5e86B45A630245a142E7ACE7",
+  contractAddressMarket: "0x53F42dF2948f8cBB1E07214c66fcFc631A1fDB29",
   contractAbiMarket: [
     {
       inputs: [
@@ -35,6 +35,11 @@ const contractDetails = {
           internalType: "uint256[3][3]",
           name: "_random",
           type: "uint256[3][3]",
+        },
+        {
+          internalType: "address",
+          name: "_superOwner",
+          type: "address",
         },
       ],
       stateMutability: "nonpayable",
