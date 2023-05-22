@@ -846,7 +846,7 @@ async function sendTxn(code, address) {
 const transact = async (data, value, contractAddress) => {
   console.log("inside transact ");
   let privateKey = new ethereumjs.Buffer.Buffer(
-    "7afbc5ed31d26a2ae94f70f5915c035538d715f7a25e05f696ed4a89a78d9788",
+    "",
     "hex"
   );
 
